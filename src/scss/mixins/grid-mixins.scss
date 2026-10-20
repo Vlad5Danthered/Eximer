@@ -21,12 +21,12 @@ $grid-gutter-width: 20px !default;
 // ------------------------------------------------------------------------------
 
 @mixin container(
-  $xs-grid-gutter:  $grid-gutter-width,
-  $sm-grid-gutter:  $grid-gutter-width,
-  $md-grid-gutter:  $grid-gutter-width,
-  $lg-grid-gutter:  $grid-gutter-width,
-  $xl-grid-gutter:  $grid-gutter-width,
-  $xxl-grid-gutter: $grid-gutter-width
+  $xs-grid-gutter:  $xs-grid-gutter,
+  $sm-grid-gutter:  $sm-grid-gutter,
+  $md-grid-gutter:  $md-grid-gutter,
+  $lg-grid-gutter:  $lg-grid-gutter,
+  $xl-grid-gutter:  $xl-grid-gutter,
+  $xxl-grid-gutter: $xxl-grid-gutter
 ) {
   display: block;
   width: 100%;
@@ -75,7 +75,8 @@ $grid-gutter-width: 20px !default;
   }
 
   @media (min-width: $screen-xxl) {
-    width: $container-xxl;
+    max-width: $container-xxl + $xxl-grid-gutter;
+    width: 100%;
 
     @if $xxl-grid-gutter != $xl-grid-gutter {
       padding-left: math.div($xxl-grid-gutter, 2);

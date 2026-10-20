@@ -43,7 +43,7 @@
     background-position: center right 5px;
     background-repeat: no-repeat;
     background-size: 20px;
-    background-image: svg-load('../blocks/sprite-svg/svg/right-arrow.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
+    background-image: svg-load('../blocks/sprite-svg/svg/right-arrow.svg', fill=$primary-color, stroke=rgba(255, 255, 255, 0));
     border: 2px solid var(--border-color);
     cursor: pointer;
   }

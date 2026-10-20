@@ -7,55 +7,79 @@
   box-sizing: border-box;
   display: inline-flex;
   margin: 0;
+  border: 0;
 
-  // padding: $field-padding-vertical  $field-padding-horizontal;
+  padding: 10px 24px;
+  gap: 8px;
   white-space: nowrap;
   vertical-align: middle;
   text-align: center;
-  font-size: 1em;
+  font-size: $font-size-body;
   font-family: inherit;
-  line-height: $line-height;
+  line-height: $line-height-body;
+  font-weight: 500;
   text-decoration: none;
   text-transform: none;
-  color: $text-color;
-  border-radius: $border-radius;
-  border: 1px solid $gray-lighter;
-  background-color: $gray-lightest;
+  color: $white;
+  // border-radius: $border-radius;
+  border-radius: 73px;
+  background-color: $btn-color;
   background-image: none;
   user-select: none;
+  transition: all 0.2s ease;
   cursor: pointer;
+
+  @media (min-width: $screen-xl) {
+    padding: 16px 32px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 14px 32px;
+    gap: 12px;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-
-    // background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
+    background-color: $btn-color-hover;
   }
 
-  // &:active,
-  // &:focus {
-     // @include field-focus;
-  // }
+  &:active {
+    //  @include field-focus;
+    background-color: $btn-color-pressed;
+  }
 
   &--disabled,
   &:disabled {
     // opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
-    border-color: $gray-lighter;
+    // color: $text-color;
+    background-color: $btn-color-disabled;
+    // border-color: $gray-lighter;
 
     @at-root a.btn--disabled {
       pointer-events: none;
     }
   }
 
-  // &__icon {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  // }
+  &--icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 !important;
+
+    width: 40px;
+    height: 40px;
+
+    @media (min-width: $screen-lg) {
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &--white {
+    color: $text-color-strong;
+    background-color: $white;
+  }
 
 
 

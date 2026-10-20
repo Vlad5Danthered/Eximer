@@ -30,9 +30,9 @@
       &::before {
         @include field-focus;
 
-        color: $link-color-hover;
-        border-color: $link-color-hover;
-        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$main-color);
+        color: $btn-color-hover;;
+        border-color: $btn-color-hover;;
+        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$primary-color);
 
         // background-color: darken($gray-lightest, 10%); // как у обычных кнопок
       }
@@ -62,13 +62,13 @@
       padding: $field-padding-vertical $field-padding-horizontal;
       padding-right: 60px;
       line-height: $line-height;
-      color: $main-color;
+      color: $primary-color;
 
       // background-color: $white;
       background-repeat: no-repeat;
       background-position: right 12px center;
       background-size: 24px;
-      background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$link-color);
+      background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$btn-color);
       border: 1px solid $border-color;
       border-radius: $border-radius;
       transition: all $transition-time;
@@ -81,9 +81,9 @@
       // @include field-focus;
 
       &::before {
-        color: $link-color-hover;
-        border-color: $link-color-hover;
-        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$link-color-hover);
+        color: $btn-color-hover;;
+        border-color: $btn-color-hover;;
+        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$btn-color-hover;);
 
         // background-color: darken($gray-lightest, 10%); // как у обычных кнопок
       }

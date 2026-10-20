@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js  page  no-transition" lang="xyz" prefix="og: https://ogp.me/ns#" data-theme>
+<html class="no-js  page  no-transition" lang="xyz" prefix="og: https://ogp.me/ns#">
 
 <head>
   <meta charset="utf-8">
@@ -16,7 +16,7 @@
       @@include('blocks/page-header/page-header.html')
 
       <main>
-
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
 
         @@include('blocks/test-block/test-block.html', {
           "title": "Заголовок h1",
@@ -25,9 +25,11 @@
         })
 
         <div class="container  test">
-
+          <button type="button" class="btn btn--white">
+						<span>Подати заявку</span>
+					</button>
+          <h1>Heading H1</h1>
         </div>
-
 
       </main>
 

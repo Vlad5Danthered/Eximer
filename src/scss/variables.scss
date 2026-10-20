@@ -5,18 +5,6 @@
   --border-color: #ccc;
 }
 
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #f5f5f5;
-  --border-color: #333;
-}
-
-// [data-theme="light"] {
-//   --bg-color: #fff;
-//   --text-color: #000;
-//   --border-color: #ccc;
-// }
-
 // Базовые цвета https://colorscheme.ru/color-converter.html
 
 $black: hsl(0deg 0% 0%);
@@ -31,66 +19,135 @@ $gray-lighter: hsl(0deg 0% 80%);
 $gray-lightest: hsl(0deg 0% 90%);
 $white: hsl(0deg 0% 100%);
 $color-success: hsl(120deg 39% 54%);
-$color-danger: hsl(2deg 64% 58%);
+$color-danger: #FF3B30;
 $color-warning: hsl(35deg 84% 62%);
 
-// $color-vk:                    #4a76a8;
-$color-fb: #4267b2;
-$color-tw: #40A2F5;
-$color-gh: #24292e;
 
 
 // Семантические цвета
+$primary-color: #002DD4;
+$secondary-color: #0083FE;
+$title-color: $primary-color;
+$text-color: #535353;
+$text-color-strong: $black;
+$text-muted: #697179;
+$body-light-bg: $white;
+$body-dark-bg: $primary-color;
+$border-color: #AEAEAE;
 
-$main-color: #7391EA;
-$color-main: $main-color;
-$secondary-color: #ccc;
-$text-color: #575B66;
-$title-color: #393939;
-$text-muted: #BDBDBD;
-$body-bg: #F4F4F4;
-$link-color: $main-color;
-$link-color-hover: #4240CF;
-$border-color: $text-muted;
-$divider-color: $main-color;
+// Button
+$btn-color: $secondary-color;
+$btn-color-hover: #0272DC;
+$btn-color-pressed: $secondary-color;
+$btn-color-disabled: rgba($secondary-color, 0.21);
 
-// Базовая типографика
+// Input
+$input-color-error-light: #FFD1D1;
+$input-color-error-dark: $color-danger;
+$input-color-placeholder: $text-muted;
+$input-color-disabled: rgba($text-muted, 0.5);
 
-$font-size: 16px;
-$font-size-sm: 14px;
-$font-size-h1: 40px;
-$font-size-h2: 32px;
-$font-size-h3: 24px;
-$font-size-h4: 18px;
-$font-size-h5: 16px;
-$font-size-h6: 16px;
-$line-height: 1.5;
+
+// h1
+$font-size-h1-desktop: 58px;    // Desktop
+$line-height-h1-desktop: 63px;
+
+$font-size-h1-tablet: 48px;     // Tablet
+$line-height-h1-tablet: 52px;
+
+$font-size-h1: 36px;            // Mobile
+$line-height-h1: 40px;
+
+
+// h2
+$font-size-h2-desktop: 48px;    // Desktop
+$line-height-h2-desktop: 54px;
+
+$font-size-h2-tablet: 40px;     // Tablet
+$line-height-h2-tablet: 48px;
+
+$font-size-h2: 32px;            // Mobile
+$line-height-h2: 36px;
+
+
+// h3
+$font-size-h3-desktop: 36px;    // Desktop
+$line-height-h3-desktop: 40px;
+
+$font-size-h3-tablet: 28px;     // Tablet
+$line-height-h3-tablet: 34px;
+
+$font-size-h3: 24px;            // Mobile
+$line-height-h3: 28px;
+
+
+// Main
+$font-size-desktop: 24px;       // Desktop
+$line-height-desktop: 30px;
+
+$font-size-tablet: 20px;        // Tablet
+$line-height-tablet: 28px;
+
+$font-size: 18px;               // Mobile
+$line-height: 26px;
+
+
+// Main Medium
+$font-size-sm-desktop: 24px;    // Desktop
+$line-height-sm-desktop: 30px;
+
+$font-size-sm-tablet: 20px;     // Tablet
+$line-height-sm-tablet: 28px;
+
+$font-size-sm: 18px;            // Mobile
+$line-height-sm: 26px;
+
+
+// Body small
+$font-size-body: 16px;
+$line-height-body: 20px;
+
+
+// Menu
+$font-size-menu: 20px;           // default
+$line-height-menu: 28px;
+
+$font-size-menu-sm: 18px;        // small
+$line-height-menu-sm: 24px;
+
+
+// Micro
+$font-size-micro: 14px;
+$line-height-micro: 20px;
 
 // $typo-margin-vertical:        1em;
 
-$font-family: 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
-
-// Практически сейчас не имеет смысла перечислять варианты дефолтных шрифтов для разных систем, если используется свойство font-size-adjust: from-font на теге body
-
-// $font-family: ['Project font'], 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
-// $font-family-headings: ['Project font'], 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif;
-// $font-family-monospace: sfmono-regular, menlo, monaco, consolas, liberation mono, courier new, monospace;
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
 
 
-// Ширины
-
+// Ширины (Breakpoints)
 $screen-xs: 0;
+$screen-smm: 320px;
 $screen-sm: 480px;
 $screen-md: 768px;
-$screen-lg: 992px;
-$screen-xl: 1280px;
-$screen-xxl: 1800px;
+$screen-lg: 1024px;
+$screen-xl: 1440px;
+$screen-xxl: 1920px;
+
+// Отступы сетки (Gutter = Левый отступ + Правый отступ)
+$xs-grid-gutter: 32px;  // 16px + 16px
+$sm-grid-gutter: 32px;  // 16px + 16px
+$md-grid-gutter: 96px;  // 48px + 48px
+$lg-grid-gutter: 160px; // 80px + 80px
+$xl-grid-gutter: 160px; // 80px + 80px
+$xxl-grid-gutter: 160px; // 80px + 80px
+
+// Размеры контейнеров
 $container-sm: 100%;
 $container-md: 100%;
 $container-lg: 100%;
-$container-xl: calc($screen-xl - 20px);
-$container-xxl: calc($screen-xxl - 20px);
-
+$container-xl: 100%;
+$container-xxl: 1760px; // Максимальная ширина контентной области для экранов 1920px и 2560px
 
 // Модульная сетка
 
@@ -106,7 +163,7 @@ $field-padding-horizontal: 12px;
 $border-radius: 3px;
 $opacity: 0.7;
 $shadow: 0 4px 2px -2px rgb(0 0 0 / 30%);
-$transition-time: 0.3s;
+$transition-time: 0.15s;
 
 // BS4 vars for mixins
 $enable-transitions: true !default;
@@ -115,6 +172,6 @@ $transition-base: all .2s ease-in-out !default;
 $transition-fade: opacity .15s linear !default;
 $transition-collapse: height .2s ease !default;
 $menu-desktop-width: $screen-xl;
-$toggler-part-height: 3px;
-$toggler-part-bg-color: #000;
+$toggler-part-height: 4px;
+$toggler-part-bg-color: $white;
 $z-index-modal: 100;

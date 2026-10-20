@@ -1,9 +1,6 @@
 @use '../../scss/variables.scss' as *;
 @use '../../scss/mixins' as *;
 
-$toggler-part-height: 3px !default;
-$toggler-part-bg-color: #000 !default;
-
 .burger {
   $block-name: &; // #{$block-name}__element
 
@@ -11,37 +8,40 @@ $toggler-part-bg-color: #000 !default;
   z-index: 1;
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   user-select: none;
   cursor: pointer;
-
+  
   > span {
-    display: inline-block;
-    width: 100%;
+    margin: 0 auto;
+    display: block;
+    width: calc(100% - 4px);
     height: $toggler-part-height;
     background: $toggler-part-bg-color;
+    border-radius: 2px;
     position: relative;
     transition: background $transition-time $transition-time;
 
     &::before,
     &::after {
       content: '';
+      display: block;
       position: absolute;
       left: 0;
       width: 100%;
       height: $toggler-part-height;
       background: $toggler-part-bg-color;
-      transform-origin: 50% 50%;
+      border-radius: 2px;
       transition: top $transition-time $transition-time, transform $transition-time;
     }
 
     &::before {
-      top: -10px;
+      top: -12px;
     }
 
     &::after {
-      top: 10px;
+      top: 12px;
     }
   }
 
@@ -49,6 +49,7 @@ $toggler-part-bg-color: #000 !default;
     > span {
       transition: background $transition-time 0s;
       background: transparent;
+      width: calc(80% - 4px);
 
       &::before,
       &::after {

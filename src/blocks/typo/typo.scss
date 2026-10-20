@@ -5,17 +5,30 @@
 // Этот блок ответственен ТОЛЬКО за типографику проекта.
 // Не пишите тут какую-либо стороннюю стилизацию.
 
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff'),
-//        url('../fonts/FONTNAME.ttf')  format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-// }
 
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/HelveticaNeue.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
-// Не забыть !!!   font-display: swap;
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/HelveticaNeue-medium.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 body {
   // ТОЛЬКО типографика!
@@ -36,6 +49,16 @@ body {
 
   // text-rendering: optimizeLegibility;
   // Partial support in Android browser versions is due to a serious bug where text-rendering: optimizeLegibility causes custom web fonts to not render!!!
+
+    @media (min-width: $screen-md) {
+      font-size: $font-size-tablet;
+      line-height: $line-height-tablet;
+    }
+    
+    @media (min-width: $screen-xl) {
+      font-size: $font-size-desktop;
+      line-height: $line-height-desktop;
+    }
 }
 
 .h1,
@@ -81,17 +104,53 @@ h6 {
 
 .h1,
 h1 {
-  // font-size: $font-size-h1;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+  font-weight: bold;
+  
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h1-tablet;
+    line-height: $line-height-h1-tablet;
+  }
+  
+  @media (min-width: $screen-xl) {
+    font-size: $font-size-h1-desktop;
+    line-height: $line-height-h1-desktop;
+  }
 }
 
 .h2,
 h2 {
-  // font-size: $font-size-h2;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+  font-weight: bold;
+  
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h2-tablet;
+    line-height: $line-height-h2-tablet;
+  }
+  
+  @media (min-width: $screen-xl) {
+    font-size: $font-size-h2-desktop;
+    line-height: $line-height-h2-desktop;
+  }
 }
 
 .h3,
 h3 {
-  // font-size: $font-size-h3;
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+  font-weight: bold;
+  
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h3-tablet;
+    line-height: $line-height-h3-tablet;
+  }
+  
+  @media (min-width: $screen-xl) {
+    font-size: $font-size-h3-desktop;
+    line-height: $line-height-h3-desktop;
+  }
 }
 
 .h4,
@@ -217,7 +276,8 @@ hr {
 
 .small,
 small {
-  font-size: $font-size * 0.75;
+  font-size: $font-size-micro;
+  line-height: $line-height-micro;
 }
 
 sub,
@@ -227,7 +287,7 @@ sup {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 abbr[title] {

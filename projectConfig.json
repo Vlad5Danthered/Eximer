@@ -27,7 +27,8 @@
     "table": [],
     "table-mobile-scroll": [],
     "table-responsive": [],
-    "tabs": []
+    "tabs": [],
+    "lang-switcher": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",

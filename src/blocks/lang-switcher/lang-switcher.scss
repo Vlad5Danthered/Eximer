@@ -1,85 +1,98 @@
 @use '../../scss/variables.scss' as *;
 @use '../../scss/mixins' as *;
 
-.lang-switcher {
-  // @include col(xs, 5, $grid-columns, 20px);
-  // @include col(md, 2);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
 
-  @media (min-width: $screen-md) {
-    display: inline-flex;
-    max-width: 90px;
-    margin-left: 0;
+.lang-switcher {
+
+  $block-name:                &; // #{$block-name}__element
+  $toggle-height:             34px;
+  position: relative;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $white;
+    z-index: 2; // над списком
+    padding: 12px;
+    gap: 6px;
+    border: 0;
+    font-size: $font-size-body;
+    line-height: $line-height-body;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    text-transform: uppercase;
+    border-radius: 12px;
+    // transition: background-color $transition-time;
+    cursor: pointer;
+
+    // &:hover,
+    // &:focus-visible {
+    //   border-color: $grey-2;
+    // }
   }
 
-  $block-name: &; // #{$block-name}__element
+  &__icon {
+    // margin-left: 8px;
+    transform: rotate(180deg);
+    flex-shrink: 0;
+    transition: transform $transition-time;
+  }
 
-  .dropdown-toggle {
-    padding: 5px 10px;
-    font-family: $font-family;
-    font-size: $font-size;
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: ($toggle-height - 1px) 0 4px; // место под кнопку
+    background-color: $white;
+    // border: 1px solid $border-color;
+    border-radius: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity $transition-time, visibility $transition-time;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: $toggle-height;
+    padding: 0 5px 0 8px;
+    font-size: $font-size-body;
+    line-height: $line-height-body;
     font-weight: 500;
     text-transform: uppercase;
-    user-select: none;
-    cursor: pointer;
-    color: inherit;
-    background-color: $white;
-    border: none;
-    box-shadow: $shadow;
-
-    &:hover,
-    &:focus {
-      color: $main-color;
-    }
-
-    &::after {
-      display: none;
-    }
-
-    &::before {
-      display: inline-block;
-      vertical-align: middle;
-      content: "";
-      width: 16px;
-      height: 10px;
-      margin-right: 10px;
-
-      // background: svg-load('../blocks/sprite-svg/svg/bottom-arrow-s.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
-      background: svg-load('../blocks/lang-switcher/bg-img/bottom-arrow-s.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      transition: transform $transition-time ease-out;
-    }
-
-    &[aria-expanded="true"] {
-      &::before {
-        transform: rotate(180deg) translateY(2px);
-      }
-    }
-  }
-
-  .dropdown-menu {
-    min-width: 65px;
-  }
-
-  .dropdown-item {
-    font-family: $font-family;
-    font-size: $font-size;
-    font-weight: 500;
-    padding-right: 5px;
+    text-decoration: none !important;
     color: inherit;
 
     &:hover,
     &:focus {
-      color: $main-color;
+      color: #C7288A;
     }
   }
 
-  .dropdown-item + .dropdown-item {
-    padding-top: 10px;
+  // Открытое состояние
+  &.is-open {
+
+    #{$block-name}__toggle {
+      // background-color: $white;
+      color: $secondary-color;
+    }
+
+    #{$block-name}__icon {
+      transform: rotate(0deg);
+    }
+
+    #{$block-name}__list {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    margin-left: 12px;
   }
 }

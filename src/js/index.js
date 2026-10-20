@@ -1,6 +1,6 @@
 /**
  * Главный JS-файл проекта (точка входа)
- * Минимальная инициализация: no-js → js, vh fix, lazy-bg, theme switcher
+ * Минимальная инициализация: no-js → js, vh fix, lazy-bg, switcher
  * Подключение сторонних библиотек (например, CoreUI) и кастомных скриптов блоков
  */
 
@@ -149,129 +149,6 @@ function observeLazyLoad() {
 }
 
 // =============================================================================
-//  4. Theme Switcher (переключатель светлой/тёмной темы)
-// =============================================================================
-
-/**
- * Theme Switcher Script
- *
- * Автоматически определяет и применяет светлую или тёмную тему
- * на основе системных настроек пользователя (prefers-color-scheme).
- * Позволяет вручную переключать тему с плавной анимацией перехода.
- * Сохраняет выбор пользователя в localStorage и синхронизирует
- * тему между всеми открытыми вкладками.
- * При удалении значения из localStorage возвращается к системной теме.
- *
- * Основные возможности:
- * - Автоматический выбор темы при первой загрузке (по system preference).
- * - Переключение темы по кнопке с id="toggle-theme" с плавным переходом.
- * - Реакция на изменение системной темы (если пользователь не выбрал вручную).
- * - Синхронизация темы между вкладками через событие storage.
- * - Отключение анимации при первой установке темы (через класс no-transition).
- *
- * Для корректной работы требуется:
- * - Кнопка с id="toggle-theme" для ручного переключения.
- * - Класс "no-transition" на <html> для предотвращения анимации при первой загрузке.
- * - CSS для .theme-transition с нужными transition-свойствами:
- *
- *   html.no-transition *,
- *   html.no-transition {
- *     transition: none !important;
- *   }
- *
- *   html.theme-transition * {
- *     transition:
- *       background-color 0.3s ease,
- *       color 0.3s ease,
- *       border-color 0.3s ease;
- *   }
- */
-
-function initThemeSwitcher() {
-  var STORAGE_KEY = 'theme';
-  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  var transitionTimeout;
-  var lastToggleTime = 0;
-
-  function setThemeAttribute(theme, smooth) {
-    if (smooth) {
-      clearTimeout(transitionTimeout);
-      document.documentElement.classList.add('theme-transition');
-      transitionTimeout = setTimeout(function () {
-        document.documentElement.classList.remove('theme-transition');
-      }, 350);
-    }
-    document.documentElement.setAttribute('data-theme', theme);
-  }
-
-  function applyTheme(theme, smooth) {
-    setThemeAttribute(theme, smooth);
-    localStorage.setItem(STORAGE_KEY, theme);
-  }
-
-  function applySystemTheme(smooth) {
-    var systemTheme = prefersDark.matches ? 'dark' : 'light';
-    setThemeAttribute(systemTheme, smooth);
-    localStorage.removeItem(STORAGE_KEY);
-  }
-
-  function toggleTheme() {
-    var now = Date.now();
-    if (now - lastToggleTime < 500) return;
-    lastToggleTime = now;
-
-    var current = document.documentElement.getAttribute('data-theme') || 'light';
-    var next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next, true);
-  }
-
-  window.addEventListener('storage', function (e) {
-    if (e.key === STORAGE_KEY) {
-      // Блокируем toggleTheme, чтобы не создать цикл
-      lastToggleTime = Date.now();
-
-      if (e.newValue === null) {
-        setThemeAttribute(prefersDark.matches ? 'dark' : 'light', true);
-      } else if (e.newValue === 'dark' || e.newValue === 'light') {
-        setThemeAttribute(e.newValue, true);
-      }
-    }
-  });
-
-  function initDOM() {
-    var saved = localStorage.getItem(STORAGE_KEY);
-
-    if (saved === 'dark' || saved === 'light') {
-      setThemeAttribute(saved, false);
-    } else {
-      setThemeAttribute(prefersDark.matches ? 'dark' : 'light', false);
-    }
-
-    requestAnimationFrame(function () {
-      document.documentElement.classList.remove('no-transition');
-    });
-
-    var toggleBtn = document.getElementById('toggle-theme');
-    if (toggleBtn) {
-      toggleBtn.removeEventListener('click', toggleTheme);
-      toggleBtn.addEventListener('click', toggleTheme);
-    }
-
-    prefersDark.addEventListener('change', function () {
-      if (!localStorage.getItem(STORAGE_KEY)) {
-        applySystemTheme(true);
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDOM);
-  } else {
-    initDOM();
-  }
-}
-
-// =============================================================================
 //  5. Инициализация
 // =============================================================================
 
@@ -284,8 +161,6 @@ function initGlobal() {
   } else {
     observeLazyLoad();
   }
-
-  initThemeSwitcher();
 }
 
 initGlobal();

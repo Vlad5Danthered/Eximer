@@ -3,4 +3,47 @@
 
 .page-header {
   $block-name: &; // #{$block-name}__element
+  position: relative;
+  background-color: $primary-color;
+
+
+  &__inner {
+
+    padding-top: 20px;
+    padding-bottom: 14px;
+
+    background-color: $primary-color;
+    transition: color 2s ease-in-out;
+
+    @media (min-width: $screen-md) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__inner,&__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__right {
+    gap: 12px;
+
+    @media (max-width: $screen-xl - 1) {
+      order: 2;
+      & > .btn {
+        display: none;
+      }
+    }
+    @media (max-width: #{$screen-md - 1px}) {
+      .lang-switcher { display: none; }
+    }
+  }
+  &__inner .main-nav {
+    @media (max-width: $screen-xl - 1) {
+      order: 3;
+      margin-left: auto;
+    }
+  }
+
 }

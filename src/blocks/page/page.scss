@@ -52,7 +52,7 @@
   // ScrollBar -> Firefox only
 
   /* «цвет ползунка» «цвет полосы скроллбара» */
-  scrollbar-color: $main-color $gray-lightest;
+  scrollbar-color: $primary-color $gray-lightest;
 
   // color1 (wdtn ползунка) color2 (цвет всего скролбара)
   scrollbar-width: thin;  /* толщина */
@@ -76,7 +76,7 @@
 
   /* ползунок скроллбара */
   ::-webkit-scrollbar-thumb {
-    background-color: $main-color;
+    background-color: $primary-color;
     border-radius: 8px;
     box-shadow: none;
 
@@ -84,25 +84,9 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    // background-color: darken($main-color, 5%);
-    background-color: color.scale($main-color, $lightness: 5%);
+    // background-color: darken($primary-color, 5%);
+    background-color: color.scale($primary-color, $lightness: 5%);
   }
-
-  // Theme toggler classes - Start
-
-  &.no-transition *,
-  &.no-transition{
-    transition: none !important;
-  }
-
-  &.theme-transition * {
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease;
-  }
-
-  // Theme toggler classes - End
 }
 
 body {
@@ -110,7 +94,7 @@ body {
   display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
   flex-direction: column;  // и прижимаем footer в IE 10-11
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: $white;
   margin: 0;
   min-height: 100%;
 }
@@ -207,18 +191,18 @@ img {
   height: auto;
 }
 
-a {
-  color: $link-color;
+a:not(.btn) {
+  color: $btn-color;
   background-color: transparent;
   transition: color 0.3s;
 
   &:hover,
   &:focus {
-    color: $link-color-hover;
+    color: $btn-color-hover;
   }
 
   // &:visited {
-  //   color: $link-color-hover;
+  //   color: $btn-color-hover;;
   // }
 }
 
@@ -282,12 +266,7 @@ a {
 /* Кастомизируем выделение текста на сайте */
 *:not(img)::selection {
   color: $white;
-  background-color: $main-color; /* Safari, Chrome, Opera */
-
-  // :root[data-theme="dark"] & {
-  //   color: var(--yellow-400);
-  //   background-color: var(--blue-800);
-  // }
+  background-color: $primary-color; /* Safari, Chrome, Opera */
 }
 
 /*
@@ -301,25 +280,26 @@ a {
 }
 
 .container {
-  display: block;
-  width: 100%;
-  padding-left: 12px;
-  padding-right: 12px;
-  background: none;
+  // display: block;
+  // width: 100%;
+  // padding-left: 12px;
+  // padding-right: 12px;
+  // background: none;
+  @include container();
 
-  @media (min-width: $screen-md) {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  // @media (min-width: $screen-md) {
+  //   padding-left: 32px;
+  //   padding-right: 32px;
+  // }
 
-  @media (min-width: $screen-xl) {
-    $padding-min: 32px; // нужный отступ от краев экрана
-    // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
-    $half-screen-xl: math.div($screen-xl, 2) - $padding-min;
+  // @media (min-width: $screen-xl) {
+  //   $padding-min: 32px; // нужный отступ от краев экрана
+  //   padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+  //   $half-screen-xl: math.div($screen-xl, 2) - $padding-min;
 
-    padding-left: calc(50% - #{$half-screen-xl});
-    padding-right: calc(50% - #{$half-screen-xl});
-  }
+  //   padding-left: calc(50% - #{$half-screen-xl});
+  //   padding-right: calc(50% - #{$half-screen-xl});
+  // }
 }
 
 // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
@@ -376,18 +356,3 @@ a {
   @include col(md, 4);
   @include col(lg, 3);
 }
-
-// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
-// background-image: svg-load('../blocks/sprite-svg/svg/asterisk.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
-
-/*
-@include col(xs, 12);
-@include col(md, 6);
-@include col(xl, 3);
-@include col(xxl, 3);
-*/
-
-// :root[data-theme="dark"] & {}
-
-// @media (min-width: $screen-md) {}
-// @media (max-width: $screen-md - 1) {}

@@ -44,7 +44,7 @@
     border-radius: $border-radius;
 
     &:hover {
-      border-color: $link-color-hover;
+      border-color: $btn-color-hover;;
     }
 
     &:focus,
@@ -60,7 +60,7 @@
 
     &[required] {
       padding-right: 30px;
-      background: svg-load('../blocks/text-input/bg-img/asterisk-icon.svg', fill=$main-color);
+      background: svg-load('../blocks/text-input/bg-img/asterisk-icon.svg', fill=$primary-color);
       background-repeat: no-repeat;
       background-position: right 12px top 24px;
       background-size: 7px;
@@ -169,7 +169,7 @@
 
     &:hover,
     &:focus {
-      // background-image: svg-load('../blocks/sprite-svg/svg/eye.svg', fill=$main-color);
+      // background-image: svg-load('../blocks/sprite-svg/svg/eye.svg', fill=$primary-color);
     }
 
     &.show {
@@ -177,7 +177,7 @@
 
       &:hover,
       &:focus {
-        // background-image: svg-load('../blocks/sprite-svg/svg/eye-slash.svg', fill=$main-color);
+        // background-image: svg-load('../blocks/sprite-svg/svg/eye-slash.svg', fill=$primary-color);
       }
     }
   }

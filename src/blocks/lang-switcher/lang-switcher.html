@@ -1,18 +1,23 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
 @ @include('blocks/lang-switcher/lang-switcher.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-<div class="lang-switcher  dropdown" id="lang-switcher">
-  <button class="dropdown-toggle" type="button" id="lang-switcher-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RU</button>
-  <div class="dropdown-menu" aria-labelledby="lang-switcher">
-    <a class="dropdown-item" href="#">UA</a>
-    <a class="dropdown-item" href="#">RU</a>
-  </div>
-</div>
-
 -->
+
+<div class="lang-switcher" data-lang-switcher>
+  <button class="lang-switcher__toggle" type="button"
+          aria-haspopup="true" aria-expanded="false" aria-controls="lang-list"
+          title="Англ. язык">
+    <span class="lang-switcher__current">Укр</span>
+    <svg class="lang-switcher__icon" width="16" height="16" aria-hidden="true" focusable="false">
+      <use xlink:href="img/sprite-svg.svg#bottom-arrow-s">
+    </svg>
+  </button>
+
+  <ul class="list-nostyled  lang-switcher__list" id="lang-list">
+    <li class="lang-switcher__item">
+      <a href="#" class="lang-switcher__link" lang="uk" hreflang="uk" title="Укр. язык">Англ</a>
+    </li>
+    <li class="lang-switcher__item">
+      <a href="#" class="lang-switcher__link" lang="ru" hreflang="ru" title="Рус. язык">Рус</a>
+    </li>
+  </ul>
+</div>

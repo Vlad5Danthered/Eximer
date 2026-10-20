@@ -2,60 +2,124 @@
 @use '../../scss/mixins' as *;
 @use "sass:math";
 
-$gray-lightest: hsl(0deg 0% 90%) !default;
-$screen-xs: 0 !default;
-$screen-sm: 480px !default;
-$screen-md: 768px !default;
-$screen-lg: 992px !default;
-$screen-xl: 1200px !default;
-$screen-xxl: 1800px !default;
-$menu-desktop-width: $screen-xl !default;
-$toggler-part-height: 3px !default;
-$toggler-part-bg-color: #000 !default;
-$transition-time: 0.3s !default;
-
 .main-nav {
   $block-name: &; // #{$block-name}__element
 
-  position: relative;
   z-index: 10;
 
-  // первый уровень
   &__list {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: $primary-color;
 
-    // мобильный вид списка
+    & .lang-switcher {
+      display: none;
+    }
+
+    // мобильный/планшетный вид списка (всё, что меньше десктопа)
     @media (max-width: #{$menu-desktop-width - 1px}) {
-      // открытие/закрытие меню только в случае работающего JS
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: -1px;
 
       .js & {
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.2s;
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: max-height 0.2s ease, padding 0.125s ease;
       }
 
       .js #{$block-name}--open & {
-        max-height: 100vh;
-        transition: max-height 0.6s;
+        max-height: 72px;
+        padding-top: 2px;
+        padding-bottom: 24px;
       }
+
+      .no-js & {
+        padding-top: 2px;
+        padding-bottom: 24px;
+      }
+    }
+
+    @media (max-width: #{$screen-md - 1px}) {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-left: math.div($xs-grid-gutter, 2);
+      padding-right: math.div($xs-grid-gutter, 2);
+      text-align: center;
+
+      .js #{$block-name}--open & {
+        max-height: 400px;
+      }
+
+      .js #{$block-name}--open & {
+        padding-bottom: 48px;
+      }
+
+      & .lang-switcher {
+        display: block;
+      }
+    }
+
+    // планшет 768–1023: отступы как у контейнера (96px / 2)
+    @media (min-width: $screen-md) and (max-width: #{$screen-lg - 1px}) {
+      padding-left: math.div($md-grid-gutter, 2);
+      padding-right: math.div($md-grid-gutter, 2);
+    }
+
+    // 1024–1439: 160px / 2
+    @media (min-width: $screen-lg) and (max-width: #{$menu-desktop-width - 1px}) {
+      padding-left: math.div($lg-grid-gutter, 2);
+      padding-right: math.div($lg-grid-gutter, 2);
     }
 
     // настольный вид списка
     @media (min-width: $menu-desktop-width) {
-      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
     }
   }
 
   &__item {
     position: relative;
+    margin-left: 24px;
 
-    &--active {
+    &:first-child { margin-left: 0; }
 
-      & > #{$block-name}__link {
-        color: red;
+    @media (max-width: #{$menu-desktop-width - 1px}) {
+      margin-left: 0;
+    }
+
+    // язык показываем только на мобильном (на планшете он в шапке)
+    &--lang {
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+
+    &--btn {
+      max-width: 288px;
+      @media (min-width: $menu-desktop-width) {
+        display: none;
+      }
+
+      @media (max-width: #{$screen-md - 1px}) {
+        width: 100%;
+        margin-top: 12px;
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
       }
     }
   }
@@ -64,72 +128,91 @@ $transition-time: 0.3s !default;
     display: block;
     padding: 0.5em;
     text-decoration: none;
-    background-color: #fff;
+    font-size: $font-size-menu-sm;
+    line-height: $line-height-menu-sm;
+    font-weight: 500;
+    color: $white !important;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @media (min-width: $screen-xl) {
+      font-size: $font-size-menu-sm;
+      line-height: $line-height-menu-sm;
+    }
+    @media (min-width: $screen-lg) {
+      font-size: $font-size-menu;
+      line-height: $line-height-menu;
+    }
+
+    @media (min-width: $screen-md) and (max-width: #{$menu-desktop-width - 1px}) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     &:hover,
     &:focus {
-      text-decoration: none;
-      background-color: aquamarine;
+      text-decoration: underline;
+      color: inherit;
     }
 
-    &--lvl-2 {
-      @media (max-width: #{$menu-desktop-width - 1px}) {
-        padding-left: 1.2em;
-      }
-    }
+    // &--lvl-2 {
+    //   @media (max-width: #{$menu-desktop-width - 1px}) {
+    //     padding-left: 1.2em;
+    //   }
+    // }
 
-    &--lvl-3 {
-      @media (max-width: #{$menu-desktop-width - 1px}) {
-        padding-left: 2.4em;
-      }
-    }
+    // &--lvl-3 {
+    //   @media (max-width: #{$menu-desktop-width - 1px}) {
+    //     padding-left: 2.4em;
+    //   }
+    // }
   }
 
-  &__sublist-wrapper {
-    &--lvl-2 {
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
+  // &__sublist-wrapper {
+  //   &--lvl-2 {
+  //     @media (min-width: $menu-desktop-width) {
+  //       position: absolute;
+  //       top: 100%;
+  //       left: 0;
+  //       z-index: 1;
+  //       opacity: 0;
+  //       height: 0;
+  //       overflow: hidden;
+  //       transition: opacity $transition-time;
 
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
+  //       // stylelint-disable  max-nesting-depth
+  //       #{$block-name}__item--show-child > &,
+  //       #{$block-name}__item:hover & {
+  //         opacity: 1;
+  //         height: auto;
+  //         overflow: visible;
+  //       }
+  //       // stylelint-enable
+  //     }
+  //   }
 
-    &--lvl-3 {
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
+  //   &--lvl-3 {
+  //     @media (min-width: $menu-desktop-width) {
+  //       position: absolute;
+  //       z-index: 1;
+  //       top: 0;
+  //       left: 100%;
+  //       opacity: 0;
+  //       height: 0;
+  //       overflow: hidden;
+  //       transition: opacity $transition-time;
 
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-  }
+  //       // stylelint-disable  max-nesting-depth
+  //       #{$block-name}__item--show-child > &,
+  //       #{$block-name}__item--lvl-2:hover & {
+  //         opacity: 1;
+  //         height: auto;
+  //         overflow: visible;
+  //       }
+  //       // stylelint-enable
+  //     }
+  //   }
+  // }
 
 
 

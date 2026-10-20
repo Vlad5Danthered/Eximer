@@ -5,4 +5,14 @@
 
   display: block;
   white-space: nowrap;
+
+  .page-header & {
+    width: 156px;
+    height: 34px;
+  }
+
+  .page-footer & {
+    width: 288px;
+    height: 64px;
+  }
 }
