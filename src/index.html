@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="xyz" prefix="og: https://ogp.me/ns#" data-theme>
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас вимкнено JavaScript. Приносимо свої вибачення, але це ускладнює користування цим сайтом.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main>
+
+
+        @@include('blocks/test-block/test-block.html', {
+          "title": "Заголовок h1",
+          "img": "about-us-img",
+          "isPicture": true
+        })
+
+        <div class="container  test">
+
+        </div>
+
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

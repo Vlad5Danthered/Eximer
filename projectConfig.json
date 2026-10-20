@@ -1,0 +1,62 @@
+{
+  "dirs": {
+    "srcPath": "src/",
+    "buildPath": "build/",
+    "blocksDirName": "blocks"
+  },
+  "blocks": {
+    "typo": [],
+    "page": [],
+    "breadcrumbs": [],
+    "btn": [],
+    "burger": [],
+    "close": [],
+    "embed-responsive": [],
+    "field-actions": [],
+    "field-checkbox": [],
+    "field-radio": [],
+    "field-text": [],
+    "form": [],
+    "logo": [],
+    "main-nav": [],
+    "page-footer": [],
+    "page-header": [],
+    "pagination": [],
+    "sprite-svg": [],
+    "test-block": [],
+    "table": [],
+    "table-mobile-scroll": [],
+    "table-responsive": [],
+    "tabs": []
+  },
+  "addCssBefore": [
+    "src/scss/_coreui-custom.scss",
+    "src/scss/variables.scss",
+    "src/scss/mixins.scss"
+  ],
+  "addCssAfter": [
+    "src/scss/print.scss"
+  ],
+  "addJsBefore": [
+    "./node_modules/autosize/dist/autosize.min.js"
+  ],
+  "addJsAfter": [],
+  "copiedJs": [],
+  "copiedCss": [],
+  "singleCompiled": [],
+  "allowedImageExtensions": [
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "svg",
+    "ico",
+    "webp",
+    "avif"
+  ],
+  "allowedVideoExtensions": [
+    "mp4",
+    "webm",
+    "ogv"
+  ]
+}
