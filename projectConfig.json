@@ -16,7 +16,6 @@
     "field-checkbox": [],
     "field-radio": [],
     "field-text": [],
-    "form": [],
     "logo": [],
     "main-nav": [],
     "page-footer": [],
@@ -28,7 +27,10 @@
     "table-mobile-scroll": [],
     "table-responsive": [],
     "tabs": [],
-    "lang-switcher": []
+    "lang-switcher": [],
+    "footer-contact-form": [],
+    "field-select": [],
+    "to-top": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",

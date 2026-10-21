@@ -3,4 +3,97 @@
 
 .page-footer {
   $block-name: &; // #{$block-name}__element
+
+  background: linear-gradient(180deg, $primary-color 0%, #040E32 100%);
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: $white;
+
+  & .to-top {
+    margin-left: 12px;
+  }
+
+  &__inner {
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $screen-md - 1) {
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    @include col(xs, 12);
+    @include col(lg, 4);
+    @include col(md, 6);
+  }
+
+  &__social {
+    display: flex;
+    gap: 12px;
+    
+    &-item {
+      a {
+        display: block;
+        width: 48px;
+        height: 48px;
+      }
+
+      svg{
+        color: $white;
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: $font-size;
+    line-height: $line-height-menu-sm;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__nav {
+
+    &-list {
+      margin-top: 0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+    }
+
+    &-link {
+      padding: 12px;
+      display: block;
+      text-decoration: none;
+      font-size: $font-size-menu-sm;
+      line-height: $line-height-sm;
+      font-weight: 500;
+      color: $white !important;
+      text-decoration: none;
+      white-space: nowrap;
+
+      @media (min-width: $screen-md) {
+        font-size: $font-size-body;
+        line-height: $line-height-micro;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+  }
 }

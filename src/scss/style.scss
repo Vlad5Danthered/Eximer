@@ -18,7 +18,6 @@
 @use '../blocks/field-checkbox/field-checkbox';
 @use '../blocks/field-radio/field-radio';
 @use '../blocks/field-text/field-text';
-@use '../blocks/form/form';
 @use '../blocks/logo/logo';
 @use '../blocks/main-nav/main-nav';
 @use '../blocks/page-footer/page-footer';
@@ -31,6 +30,9 @@
 @use '../blocks/table-responsive/table-responsive';
 @use '../blocks/tabs/tabs';
 @use '../blocks/lang-switcher/lang-switcher';
+@use '../blocks/footer-contact-form/footer-contact-form';
+@use '../blocks/field-select/field-select';
+@use '../blocks/to-top/to-top';
 
 // Подключения из addCssAfter:
 @use './print' as *;

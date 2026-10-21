@@ -6,6 +6,10 @@
   display: block;
   white-space: nowrap;
 
+  img {
+    width: 100%;
+  }
+
   .page-header & {
     width: 156px;
     height: 34px;

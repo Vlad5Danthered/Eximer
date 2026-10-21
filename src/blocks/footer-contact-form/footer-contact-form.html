@@ -1,0 +1,67 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/footer-contact-form/footer-contact-form.html')
+-->
+
+<section class="footer-contact-form">
+  <div class="container">
+    <div class="footer-contact-form__inner">
+      <div class="footer-contact-form__image">
+        <img src="img/Vector.svg" alt="logo" aria-hidden="true">
+      </div>
+      <div class="footer-contact-form__form">
+        <form class="footer-contact-form__form-inner" action="#" method="post" novalidate>
+      <h2 class="footer-contact-form__title">Записатися на прийом</h2>
+
+      <div class="footer-contact-form__field">
+        <label class="field-text field-required">
+          <span class="field-text__name">Ваше ім'я</span>
+          <span class="field-text__input-wrap">
+            <input class="field-text__input" type="text" name="name" placeholder="Ваше ім'я" required>
+            <span class="field-text__help-text"></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="footer-contact-form__row">
+        <div class="footer-contact-form__col">
+          <label class="field-text field-required">
+            <span class="field-text__name">Телефон</span>
+            <span class="field-text__input-wrap">
+              <input class="field-text__input" type="tel" name="phone" placeholder="+380 (__) ___ -__-__" required>
+              <span class="field-text__help-text"></span>
+            </span>
+          </label>
+        </div>
+        <div class="footer-contact-form__col">
+          @@include('../field-select/field-select.html')
+        </div>
+      </div>
+
+      <div class="footer-contact-form__field">
+        <label class="field-text">
+          <span class="field-text__name">Коментар</span>
+          <span class="field-text__input-wrap">
+            <textarea class="field-text__input" name="comment" placeholder="Задайте питання нашому фахівцю"></textarea>
+            <span class="field-text__help-text"></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="footer-contact-form__field">
+        <div class="field-checkbox">
+          <label class="field-checkbox__name">
+            <input class="field-checkbox__input" type="checkbox" name="consent" required>
+            <span class="field-checkbox__name-text">Я даю згоду на обробку моїх персональних даних з гідно з Політикою Конфіденційності. Відправляючи контактні дані, ви погоджуєтесь з Політикою конфіденційності</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="footer-contact-form__field">
+        <button class="btn btn--white footer-contact-form__submit" type="submit">Записатися</button>
+      </div>
+    </form>
+  </div>
+</div>
+  </div>
+</section>

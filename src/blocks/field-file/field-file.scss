@@ -18,25 +18,7 @@
   }
 
   &__input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-
-    &:active ~ .field-file__name-text,
-    &:focus-visible ~ .field-file__name-text {
-      // @include field-focus;
-
-      &::before {
-        @include field-focus;
-
-        color: $btn-color-hover;;
-        border-color: $btn-color-hover;;
-        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$primary-color);
-
-        // background-color: darken($gray-lightest, 10%); // как у обычных кнопок
-      }
-    }
+    @include field-text;
   }
 
   &__name-text {
@@ -51,7 +33,6 @@
     border-radius: 0;
     white-space: nowrap;
 
-    // overflow: hidden;
     text-overflow: ellipsis;
 
     &::before {
@@ -63,8 +44,6 @@
       padding-right: 60px;
       line-height: $line-height;
       color: $primary-color;
-
-      // background-color: $white;
       background-repeat: no-repeat;
       background-position: right 12px center;
       background-size: 24px;
@@ -78,8 +57,6 @@
 
     &:hover,
     &:focus {
-      // @include field-focus;
-
       &::before {
         color: $btn-color-hover;;
         border-color: $btn-color-hover;;

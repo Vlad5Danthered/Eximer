@@ -1,29 +1,66 @@
 @use '../variables.scss' as *;
 
 @mixin field-text {
+  // Base (Default)
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  border: 0;
   margin: 0;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  min-height: calc(#{$line-height-body} + #{$field-padding-vertical} + #{$field-padding-vertical});
+  border-radius: 12px;
   padding: $field-padding-vertical  $field-padding-horizontal;
-  line-height: $line-height;
-  font-size: 1em;
+  line-height: $line-height-body;
+  font-size: $font-size-body;
   font-family: inherit;
-  background-color: #fff;
+  background-color: $white;
+  color: $text-color-strong;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
+  transition: box-shadow $transition-time ease;
 
-  &:focus {
-    @include field-focus;
+  &::placeholder {
+    color: $input-color-placeholder;
+    opacity: 1;
+    transition: opacity $transition-time ease;
   }
 
+  // Focus
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($secondary-color, $opacity);
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  // Filled
+  &:not(:placeholder-shown) {
+    color: $text-color-strong;
+  }
+
+  // Error (.is-error на обёртке .field-text или на самом поле)
+  &.is-error,
+  .is-error & {
+    box-shadow: 0 0 0 2px rgba($input-color-error-light, 1);
+    color: $input-color-error-dark;
+
+    &::placeholder {
+      color: $input-color-error-dark;
+    }
+  }
+
+  // Disabled
   &[disabled],
   &[readonly] {
     cursor: not-allowed;
-    background-color: $gray-lighter;
+    background-color: $gray-lightest;
+    color: $input-color-disabled;
+
+    &::placeholder {
+      color: $input-color-disabled;
+    }
   }
 
   &::-webkit-search-cancel-button,
@@ -36,20 +73,16 @@
   &[type='color'] {
     padding: 0;
   }
-
-  &::placeholder {
-    color: $text-muted;
-    opacity: 1;
-  }
 }
 
 
 @mixin field-help-text {
   display: block;
-  padding-top: 0.4em;
-  font-size: $font-size-sm;
-  line-height: 1.2em;
-  color: $text-muted;
+  line-height: $line-height-body;
+  font-size: $font-size-micro;
+  color: $input-color-error-light;
+  position: absolute;
+  bottom: -22px;
 
   &:empty { // stylelint-disable-line
     display: none;
@@ -65,7 +98,16 @@
 
 @mixin field-name {
   display: block;
-  margin-bottom: 0.4em;
-  line-height: $line-height;
-  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: $line-height-body;
+  font-size: $font-size-body;
+  font-weight: 400;
+
+  .field-required &::after {
+    position: relative;
+    content: " *";
+    color: $input-color-error-light;
+    right: 0;
+    top: 0;
+  }
 }

@@ -80,3 +80,28 @@
     box-shadow: none;
   }
 }
+
+@mixin custom-scroll($thumb-color: $secondary-color, $track-color: transparent, $width: 6px) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb-color $track-color;
+
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $track-color;
+    border-radius: 10px;
+    margin: 4px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb-color;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $btn-color-hover;
+    }
+  }
+}

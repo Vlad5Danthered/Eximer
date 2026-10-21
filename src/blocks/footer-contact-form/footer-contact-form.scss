@@ -1,0 +1,106 @@
+// В этом файле должны быть стили для БЭМ-блока footer-contact-form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Раскомментируйте нужные подключения:
+// @use 'sass:math' as *;    // math.div(), math.round(), math.ceil(), math.floor(), math.percentage(), math.max(), math.min(), math.random()
+// @use 'sass:list' as *;    // list.append(), list.join(), list.nth(), list.length(), list.index(), list.separator()
+// @use 'sass:map' as *;     // map.get(), map.set(), map.merge(), map.keys(), map.values(), map.has-key(), map.remove()
+// @use 'sass:color' as *;   // color.adjust(), color.scale(), color.mix(), color.change(), color.complement(), color.invert()
+// @use 'sass:string' as *;  // string.index(), string.slice(), string.to-upper-case(), string.to-lower-case(), string.length(), string.insert()
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.footer-contact-form {
+  $block-name: &; // #{$block-name}__element
+
+  padding-top: 48px;
+  padding-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  &__form {
+    @include col(xl, 4);
+    @include col(lg, 6);
+    @include col(md, 7);
+    color: white;
+  }
+
+  &__image {
+    @include col(xl, 5);
+    @include col(lg, 6);
+    @include col(xs, 5);
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      filter: drop-shadow(-26px -134px 38px rgba(255, 255, 255, 0%))
+          drop-shadow(-16px -86px 35px rgba(255, 255, 255, 1%))
+          drop-shadow(-9px -48px 29px rgba(255, 255, 255, 5%))
+          drop-shadow(-4px -21px 22px rgba(255, 255, 255, 9%))
+          drop-shadow(-1px -5px 12px rgba(255, 255, 255, 10%));
+
+
+    }
+
+    @media (max-width: $screen-lg - 1) {
+      img {
+        width: 600px;
+        position: absolute;
+        transform: translateX(-58%);
+      }
+    }
+    @media (max-width: $screen-md - 1) {
+      display: none;
+    }
+  }
+
+  &__form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    color: $white;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: $screen-md - 1) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__submit {
+    width: 100%;
+  }
+
+  
+}

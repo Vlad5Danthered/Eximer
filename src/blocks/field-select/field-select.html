@@ -1,15 +1,20 @@
 <!--DEV
-@@include('blocks/field-select/field-select.html')
--->
+@@include('blocks/field-select/field-select.js')
+@@include('blocks/field-select/field-select.html')-->
 
-<div class="field-select">
-  <span class="field-select__select-wrap">
-    <select class="field-select__select" name="select-name">
-      <option value="value1">Значение 1</option>
-      <option value="value2">Значение 2</option>
-      <option value="value3">Значение 3</option>
-      <option value="value4">Значение 4</option>
-    </select>
-    <!-- <small class="field-select__help-text error"></small> -->
-  </span>
+<div class="field-select field-required" data-name="select-name">
+  <span class="field-select__name">Вибір міста</span>
+  <button class="field-select__trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+    <span class="field-select__value">Одеса</span>
+    <svg class="field-select__arrow" width="20" height="20" aria-hidden="true">
+      <use xlink:href="img/sprite-svg.svg#bottom-arrow-b"></use>
+    </svg>
+  </button>
+  <ul class="field-select__dropdown" role="listbox">
+    <li class="field-select__option field-select__option--selected" role="option" data-value="odesa" aria-selected="true">Одеса</li>
+    <li class="field-select__option" role="option" data-value="kyiv" aria-selected="false">Київ</li>
+    <li class="field-select__option" role="option" data-value="lviv" aria-selected="false">Львів</li>
+    <li class="field-select__option" role="option" data-value="kharkiv" aria-selected="false">Харків</li>
+  </ul>
+  <input type="hidden" name="select-name" value="odesa">
 </div>

@@ -51,11 +51,8 @@
 
   &--disabled,
   &:disabled {
-    // opacity: $opacity;
     cursor: not-allowed;
-    // color: $text-color;
     background-color: $btn-color-disabled;
-    // border-color: $gray-lighter;
 
     @at-root a.btn--disabled {
       pointer-events: none;
@@ -63,8 +60,9 @@
   }
 
   &--icon {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 0 !important;
 
     width: 40px;
@@ -80,26 +78,4 @@
     color: $text-color-strong;
     background-color: $white;
   }
-
-
-
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   border: 1px solid $color-main;
-
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     border-color: darken($color-main, 12%);
-  //   }
-
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     border-color: $color-main;
-  //   }
-  // }
 }

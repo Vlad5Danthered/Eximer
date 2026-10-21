@@ -58,14 +58,6 @@
       }
     }
 
-    &[required] {
-      padding-right: 30px;
-      background: svg-load('../blocks/text-input/bg-img/asterisk-icon.svg', fill=$primary-color);
-      background-repeat: no-repeat;
-      background-position: right 12px top 24px;
-      background-size: 7px;
-    }
-
     &[disabled],
     &[readonly] {
       cursor: default;
