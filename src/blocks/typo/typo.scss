@@ -155,12 +155,36 @@ h3 {
 
 .h4,
 h4 {
-  // font-size: $font-size-h4;
+  font-size: $font-size-h4;
+  line-height: $line-height-h4;
+  font-weight: bold;
+  
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h4-tablet;
+    line-height: $line-height-h4-tablet;
+  }
+  
+  @media (min-width: $screen-xl) {
+    font-size: $font-size-h4-desktop;
+    line-height: $line-height-h4-desktop;
+  }
 }
 
 .h5,
 h5 {
-  // font-size: $font-size-h5;
+  font-size: $font-size-h5;
+  line-height: $line-height-h5;
+  font-weight: bold;
+  
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h5-tablet;
+    line-height: $line-height-h5-tablet;
+  }
+  
+  @media (min-width: $screen-xl) {
+    font-size: $font-size-h5-desktop;
+    line-height: $line-height-h5-desktop;
+  }
 }
 
 .h6,

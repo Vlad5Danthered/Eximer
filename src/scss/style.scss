@@ -33,6 +33,7 @@
 @use '../blocks/footer-contact-form/footer-contact-form';
 @use '../blocks/field-select/field-select';
 @use '../blocks/to-top/to-top';
+@use '../blocks/accordion/accordion';
 
 // Подключения из addCssAfter:
 @use './print' as *;

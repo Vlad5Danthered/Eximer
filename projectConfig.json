@@ -30,7 +30,8 @@
     "lang-switcher": [],
     "footer-contact-form": [],
     "field-select": [],
-    "to-top": []
+    "to-top": [],
+    "accordion": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",

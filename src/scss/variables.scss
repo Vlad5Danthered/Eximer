@@ -27,10 +27,12 @@ $color-warning: hsl(35deg 84% 62%);
 // Семантические цвета
 $primary-color: #002DD4;
 $secondary-color: #0083FE;
+
 $title-color: $primary-color;
 $text-color: #535353;
 $text-color-strong: $black;
 $text-muted: #697179;
+
 $body-light-bg: $white;
 $body-dark-bg: $primary-color;
 $border-color: #AEAEAE;
@@ -38,7 +40,7 @@ $border-color: #AEAEAE;
 // Button
 $btn-color: $secondary-color;
 $btn-color-hover: #0272DC;
-$btn-color-pressed: $secondary-color;
+$btn-color-pressed: #0083FE;
 $btn-color-disabled: rgba($secondary-color, 0.21);
 
 // Input
@@ -79,6 +81,28 @@ $line-height-h3-tablet: 34px;
 
 $font-size-h3: 24px;            // Mobile
 $line-height-h3: 28px;
+
+
+// h4
+$font-size-h4-desktop: 24px;    // Desktop
+$line-height-h4-desktop: 30px;
+
+$font-size-h4-tablet: 20px;     // Tablet
+$line-height-h4-tablet: 28px;
+
+$font-size-h4: 18px;            // Mobile
+$line-height-h4: 26px;
+
+
+// h5
+$font-size-h5-desktop: 20px;    // Desktop
+$line-height-h5-desktop: 28px;
+
+$font-size-h5-tablet: 18px;     // Tablet
+$line-height-h5-tablet: 26px;
+
+$font-size-h5: 16px;            // Mobile
+$line-height-h5: 24px;
 
 
 // Main

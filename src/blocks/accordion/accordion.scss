@@ -1,0 +1,154 @@
+// В этом файле должны быть стили для БЭМ-блока accordion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Раскомментируйте нужные подключения:
+// @use 'sass:math' as *;    // math.div(), math.round(), math.ceil(), math.floor(), math.percentage(), math.max(), math.min(), math.random()
+// @use 'sass:list' as *;    // list.append(), list.join(), list.nth(), list.length(), list.index(), list.separator()
+// @use 'sass:map' as *;     // map.get(), map.set(), map.merge(), map.keys(), map.values(), map.has-key(), map.remove()
+// @use 'sass:color' as *;   // color.adjust(), color.scale(), color.mix(), color.change(), color.complement(), color.invert()
+// @use 'sass:string' as *;  // string.index(), string.slice(), string.to-upper-case(), string.to-lower-case(), string.length(), string.insert()
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.accordion {
+  $block-name: &; // #{$block-name}__element
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__item {
+    overflow: hidden;
+    background: $primary-color;
+    border-radius: 12px;
+    //box-shadow: 0 8px 25px gba(0, 0, 0, 0.3);
+
+    &.active #{$block-name}__answer {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    width: 100%;
+    padding: 24px;
+
+    border: none;
+    background: transparent;
+    color: $white;
+
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+
+    &:focus-visible {
+      outline: 3px solid $white;
+      outline-offset: -3px;
+    }
+
+    @media (max-width: $screen-md - 1) {
+      padding: 16px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    font-family: $font-family;
+    font-size: $font-size-desktop;
+    line-height: $line-height-desktop;
+    font-weight: 600;
+    text-align: left;
+
+    @media (max-width: $screen-md - 1) {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent !important;
+
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+
+    rect {
+      color: transparent;
+      transition: color 0.2s ease;
+    }
+    path { 
+      color: $white;
+      transition: color 0.2s ease;
+    }
+  }
+
+  &__question[aria-expanded="true"] &__icon {
+    transform: rotate(180deg);
+
+    rect {
+      color: $white;
+    }
+    path { 
+      color: $primary-color;
+    }
+  }
+
+  &__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+
+    &-content {
+      overflow: hidden;
+
+      & > div {
+        padding: 0 24px 24px;
+  
+        @media (max-width: $screen-md - 1) {
+          padding: 0 16px 16px;
+        }
+      }
+      
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+        color: $white;
+        font-size: $font-size;
+        line-height: $line-height - 2;
+
+        @media (max-width: $screen-md - 1) {
+          font-size: $font-size-body;
+          line-height: $line-height-body + 2;
+        }
+
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__answer,
+    &__icon,
+    &__question {
+      transition: none;
+    }
+  }
+}
