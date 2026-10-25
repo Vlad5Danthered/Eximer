@@ -90,6 +90,7 @@
     align-items: center;
     justify-content: center;
     color: transparent !important;
+    transform: rotate(180deg);
 
     transition:
       transform 0.2s ease,
@@ -108,7 +109,7 @@
   }
 
   &__question[aria-expanded="true"] &__icon {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 
     rect {
       color: $white;

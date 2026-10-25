@@ -59,7 +59,7 @@
       height: 18px;
       opacity: 0;
       transition: opacity $transition-time;
-      background-image: url(/img/checkboxon.svg);
+      background-image: url(../img/checkboxon.svg);
       background-size: 18px 18px;
 
       @at-root input:checked ~ & {
