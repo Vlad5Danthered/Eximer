@@ -1,0 +1,22 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/services-card/services-card.html', {
+  "image": "1",
+  "title": "Комп'ютерні та офісні лінзи",
+  "text": "Знімають синдром сухого ока, прибирають головний біль від перенапруження та блокують випромінювання екранів."
+})
+-->
+
+<article class="services-card">
+  <div class="services-card__image">
+    <picture>
+      <source srcset="img/services-@@image.webp" type="image/webp">
+      <img src="img/services-@@image.png" alt="card" width="400" height="255">
+    </picture>
+  </div>
+  <div class="services-card__text">
+    <h3 class="services-card__title">@@title</h3>
+    <p class="services-card__description">@@text</p>
+  </div>
+</article>
+

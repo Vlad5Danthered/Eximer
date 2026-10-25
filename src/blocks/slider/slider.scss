@@ -1,0 +1,252 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Блок строится на Swiper: нужны его стили (swiper-bundle.css
+// либо swiper/css). БЕЗ НИХ слайдер не работает.
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+// Локальные значения (в variables.scss нет аналога)
+$slider-sky: #e3f1f8;
+$slider-arrow-size: 44px;
+$slider-min-height: clamp(380px, 36vw, 560px);
+
+// Брейкпоинты на сетке проекта: планшет < 1024px, мобильный < 768px
+$bp-tablet: $screen-lg - 1;
+$bp-mobile: $screen-md - 1;
+
+// Контейнер: те же отступы и ширина, что у hero
+$slider-container: $container-xxl + $lg-grid-gutter;
+
+// Место под стрелки внизу текстовой части слайда
+$slider-controls-gap: 24px;
+$slider-controls-space: $slider-arrow-size + $slider-controls-gap;
+
+.slider {
+  $block-name: &; // #{$block-name}__element
+
+  --slider-media-height: min(95vw, 420px); // высота фото на мобильном
+
+  position: relative;
+  overflow: hidden;
+  // Высота слайдера - только от содержимого, что бы ни задавали родитель
+  // или глобальные стили на section (min-height, flex: 1, grid 1fr)
+  flex: none;
+  align-self: start;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  background: $white;
+  font-family: $font-family;
+  color: $text-color;
+
+  // Без инициализации Swiper стрелки не нужны
+  &:not(.swiper-initialized) #{$block-name}__controls {
+    display: none;
+  }
+
+  &__wrapper {
+    align-items: stretch;
+    min-height: $slider-min-height;
+  }
+
+  // Селектор с блоком в начале, чтобы не зависеть от порядка подключения стилей Swiper
+  #{$block-name}__slide {
+    position: relative;
+    display: flex;
+    align-items: flex-end; // кнопка слайда всегда над стрелками
+    height: auto;
+    background: linear-gradient(90deg, $white 0%, $white 30%, $slider-sky 100%);
+  }
+
+  &__content {
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $slider-container;
+    margin-inline: auto;
+    padding: 48px $lg-grid-gutter * 0.5 (48px + $slider-controls-space);
+  }
+
+  &__text {
+    max-width: min(520px, 46%);
+  }
+
+  &__title span {
+    display: block;
+  }
+
+  &__description {
+    margin: 0 0 24px;
+    max-width: 38ch;
+    font-size: $font-size-sm-tablet;
+    line-height: $line-height-sm-tablet;
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 68%;
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 40%;
+    }
+
+    // белое затухание слева
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 35%;
+      background: linear-gradient(90deg, $white, rgba($white, 0));
+    }
+  }
+
+  // Стрелки лежат над слайдами и не двигаются при смене
+  &__controls {
+    position: absolute;
+    inset: auto 0 48px;
+    z-index: 2;
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+    max-width: $slider-container;
+    margin-inline: auto;
+    padding-inline: $lg-grid-gutter * 0.5;
+    pointer-events: none; // свайп проходит сквозь пустое место
+  }
+
+  &__arrow {
+    border: 1px solid $btn-color;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background $transition-time, border-color $transition-time, color $transition-time;
+
+    &:hover {
+      border-color: $btn-color-hover;
+      background: rgba($btn-color, 0.1);
+    }
+
+    &:active {
+      background: rgba($btn-color, 0.2);
+    }
+
+    &:focus-visible {
+      outline: 3px solid $primary-color;
+      outline-offset: 3px;
+    }
+
+    &--disabled {
+      background: transparent !important;
+      color: $btn-color !important;
+      cursor: auto;
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(-90deg)
+      }
+    }
+
+    &--next {
+      svg {
+        transform: rotate(90deg)
+      }
+      
+
+    }
+    &:hover {
+      // border-color: $btn-color-hover;
+      background: $btn-color-hover;
+    }
+
+    &:active {
+      background: $btn-color-pressed;
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    #{$block-name}__media { width: 62%; }
+    #{$block-name}__text { max-width: 48%; }
+    #{$block-name}__content { padding-inline: $md-grid-gutter * 0.5; }
+    #{$block-name}__controls { padding-inline: $md-grid-gutter * 0.5; }
+
+    #{$block-name}__title {
+      font-size: $font-size-h1-tablet;
+      line-height: $line-height-h1-tablet;
+    }
+  }
+
+  // Мобильный: текст сверху, затем стрелки, фото снизу
+  @media (max-width: $bp-mobile) {
+    background: $white;
+
+    #{$block-name}__wrapper { min-height: 0; }
+
+    #{$block-name}__slide {
+      flex-direction: column;
+      align-items: stretch;
+      background: $white;
+    }
+
+    #{$block-name}__content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px $xs-grid-gutter * 0.5 $slider-controls-space;
+    }
+
+    #{$block-name}__text { max-width: none; }
+
+    #{$block-name}__title {
+      font-size: $font-size-h1;
+      line-height: $line-height-h1;
+    }
+
+    #{$block-name}__description {
+      max-width: none;
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+    }
+
+    #{$block-name}__media {
+      position: relative;
+      inset: auto;
+      flex: none;
+      width: 100%;
+      height: var(--slider-media-height);
+      margin-top: 28px;
+
+      img { object-position: 62% 30%; }
+
+      // затухание теперь сверху
+      &::after {
+        inset: 0 0 auto 0;
+        width: auto;
+        height: 40%;
+        background: linear-gradient(180deg, $white, rgba($white, 0));
+      }
+    }
+
+    // Стрелки стоят над фото: фото + его верхний отступ
+    #{$block-name}__controls {
+      inset: auto 0 calc(var(--slider-media-height) + 28px);
+      padding-inline: $xs-grid-gutter * 0.5;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #{$block-name}__arrow { transition: none; }
+  }
+}

@@ -17,11 +17,18 @@
 
 .accordion {
   $block-name: &; // #{$block-name}__element
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @media (min-width: $screen-lg) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 24px;
   }
 
   &__item {
@@ -127,7 +134,7 @@
         }
       }
       
-      p {
+      * {
         &:first-child {
           margin-top: 0;
         }
@@ -139,7 +146,6 @@
           font-size: $font-size-body;
           line-height: $line-height-body + 2;
         }
-
       }
     }
   }

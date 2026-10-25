@@ -13,7 +13,7 @@
     align-items: center;
     position: relative;
     color: $white;
-    z-index: 2; // над списком
+    z-index: 52; // над списком
     padding: 12px;
     gap: 6px;
     border: 0;
@@ -45,7 +45,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 51;
     padding: ($toggle-height - 1px) 0 4px; // место под кнопку
     background-color: $white;
     // border: 1px solid $border-color;

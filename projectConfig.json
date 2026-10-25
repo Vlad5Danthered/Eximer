@@ -22,7 +22,6 @@
     "page-header": [],
     "pagination": [],
     "sprite-svg": [],
-    "test-block": [],
     "table": [],
     "table-mobile-scroll": [],
     "table-responsive": [],
@@ -31,18 +30,29 @@
     "footer-contact-form": [],
     "field-select": [],
     "to-top": [],
-    "accordion": []
+    "accordion-item": [],
+    "hero": [],
+    "slider": [],
+    "trust": [],
+    "trust-card": [],
+    "text-section": [],
+    "services": [],
+    "services-card": [],
+    "slider-brands": [],
+    "locationsr": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",
     "src/scss/variables.scss",
-    "src/scss/mixins.scss"
+    "src/scss/mixins.scss",
+    "../../node_modules/swiper/swiper.min.css"
   ],
   "addCssAfter": [
     "src/scss/print.scss"
   ],
   "addJsBefore": [
-    "./node_modules/autosize/dist/autosize.min.js"
+    "./node_modules/autosize/dist/autosize.min.js",
+    "./node_modules/swiper/swiper-bundle.min.js"
   ],
   "addJsAfter": [],
   "copiedJs": [],

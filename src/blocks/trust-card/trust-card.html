@@ -1,0 +1,20 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/trust-card/trust-card.html', {
+  "icon": "glasses",
+  "title": "Підбір окулярів",
+  "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec <br>neque at et. Sed id a purus purus elementum eu. Vulputate et augue faucibus ipsum.Lorem ipsum dolor sit amet consectetur.Fermentum dictum non porttitor pellentesque sem ac. "
+})
+-->
+
+<article class="trust-card">
+  <div class="trust-card__icon">
+    <svg width="66" height="66">
+      <use xlink:href="img/sprite-svg.svg#@@icon"></use>
+    </svg>
+  </div>
+  <div class="trust-card__text">
+    <h3 class="trust-card__title">@@title</h3>
+    <p class="trust-card__description">@@text</p>
+  </div>
+</article>

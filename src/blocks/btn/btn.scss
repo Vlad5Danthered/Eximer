@@ -44,6 +44,11 @@
     background-color: $btn-color-hover;
   }
 
+  &:focus-visible {
+    outline: 3px solid $primary-color;
+    outline-offset: 3px;
+  }
+
   &:active {
     //  @include field-focus;
     background-color: $btn-color-pressed;
@@ -65,8 +70,8 @@
     align-items: center;
     padding: 0 !important;
 
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
 
     @media (min-width: $screen-lg) {
       width: 52px;
@@ -77,5 +82,9 @@
   &--white {
     color: $text-color-strong;
     background-color: $white;
+
+    &:hover {
+      background-color: rgba($white, 0.9);
+    }
   }
 }

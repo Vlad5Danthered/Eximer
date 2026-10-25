@@ -16,23 +16,65 @@
       @@include('blocks/page-header/page-header.html')
 
       <main>
-        @@include('blocks/breadcrumbs/breadcrumbs.html')
-        <div class="container accordion__list">
-          @@include('blocks/accordion/accordion.html')
-          @@include('blocks/accordion/accordion.html')
-        </div>
+        <!-- @@include('blocks/breadcrumbs/breadcrumbs.html') -->
 
-        @@include('blocks/test-block/test-block.html', {
-          "title": "Заголовок h1",
-          "img": "about-us-img",
-          "isPicture": true
+        @@include('blocks/hero/hero.html')
+
+        @@include('blocks/text-section/text-section.html')
+
+        @@include('blocks/trust/trust.html')
+
+        @@include('blocks/slider/slider.html')
+
+        @@include('blocks/services/services.html', {
+          "child": false
         })
 
-        <div class="container  test">
-          <button type="button" class="btn btn--white">
-						<span>Подати заявку</span>
-					</button>
-          <h1>Heading H1</h1>
+        @@include('blocks/services/services.html', {
+          "child": true
+        })
+
+        @@include('blocks/locationsr/locationsr.html')
+
+        <div class="container accordion">
+          <h2>Поширені запитання</h2>
+
+          <div class="accordion__list">
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "З якого віку перевіряєте зір дитині?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "З якого віку перевіряєте зір дитині?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "Чому потрібно протирати окуляри саме спеціальними серветками/розчинами?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p><p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "Чи є обмеження в строках експлуатації сонцезахисних окулярів?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p><p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "Як продовжити \"життя\" окулярів?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p><p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "У чому різниця між дорогими та дешевими лінзами?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p><p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+
+            @@include('blocks/accordion-item/accordion-item.html', {
+              "question": "Що означають усі ці числа на моєму рецепті на окуляри?",
+              "answer": "<p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p><p>Ми приймаємо пацієнтів, віком від 3-х років. Діагностика зору у дітей проходить у 2-х локаціях нашої мережі.</p>"
+            })
+          </div>
         </div>
 
       </main>

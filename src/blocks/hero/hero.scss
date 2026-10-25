@@ -1,0 +1,113 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+// Локальные значения (в variables.scss нет аналога)
+$hero-sky: #e3f1f8;
+
+// Брейкпоинты на сетке проекта: планшет < 1024px, мобильный < 768px
+$bp-tablet: $screen-lg - 1;
+$bp-mobile: $screen-md - 1;
+
+.hero {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: clamp(380px, 36vw, 560px);
+  background: linear-gradient(90deg, $white 0%, $white 30%, $hero-sky 100%);
+  font-family: $font-family;
+  color: $text-color;
+
+  // Заголовок и описание (десктоп)
+  h1 span {
+    display: block;
+  }
+
+  p {
+    margin: 0 0 24px;
+    max-width: 38ch;
+    font-size: $font-size-sm-tablet;
+    line-height: $line-height-sm-tablet;
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 68%;
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 40%;
+    }
+
+    // белое затухание слева
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 35%;
+      background: linear-gradient(90deg, $white, rgba($white, 0));
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: $container-xxl;
+    margin: 0 auto;
+    padding: 48px $lg-grid-gutter * 0.5;
+    box-sizing: content-box;
+  }
+
+  &__text {
+    max-width: min(520px, 46%);
+  }
+
+  @media (max-width: $bp-tablet) {
+    #{$block-name}__media { width: 62%; }
+    #{$block-name}__text { max-width: 48%; }
+    #{$block-name}__content { padding-inline: $md-grid-gutter * 0.5; }
+  }
+
+  // Мобильный: текст сверху, фото снизу
+  @media (max-width: $bp-mobile) {
+    display: block;
+    min-height: 0;
+    background: $white;
+
+    #{$block-name}__content { padding: 32px $xs-grid-gutter * 0.5 0; }
+    #{$block-name}__text { max-width: none; }
+
+    p {
+      max-width: none;
+      margin-bottom: 24px;
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+    }
+
+    #{$block-name}__media {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: min(95vw, 420px);
+      margin-top: 28px;
+
+      img { object-position: 62% 30%; }
+
+      // затухание теперь сверху
+      &::after {
+        inset: 0 0 auto 0;
+        width: auto;
+        height: 40%;
+        background: linear-gradient(180deg, $white, rgba($white, 0));
+      }
+    }
+  }
+}

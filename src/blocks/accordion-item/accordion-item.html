@@ -1,15 +1,22 @@
 <!--DEV
 Для использования этого файла как шаблона:
-@@include('blocks/accordion/accordion.html')
+@@include('blocks/accordion-item/accordion-item.html', {
+  "question": "",
+  "answer": "",
+  "iconShow": false,
+  "icon": ""
+})
 -->
 
 <div class="accordion__item">
   <button class="accordion__question" aria-expanded="false">
     <div class="accordion__header">
-      <!-- <svg width="50" height="52">
-        <use xlink:href="img/sprite-svg.svg#pin"></use>
-      </svg> -->
-      <span>What services do you offer?</span>
+      @@if(iconShow)
+      <svg width="50" height="52">
+        <use xlink:href="img/sprite-svg.svg#@@icon"></use>
+      </svg>
+      @@endif
+      <span>@@question</span>
     </div>
     <span class="accordion__icon" aria-hidden="true">
       <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,26 +29,7 @@
   <div class="accordion__answer">
     <div class="accordion__answer-content">
       <div>
-        <p>
-          We provide a variety of services designed to help customers
-          find the right solution for their needs. Services can be
-          customized depending on the project.
-        </p>
-        <p>
-          We provide a variety of services designed to help customers
-          find the right solution for their needs. Services can be
-          customized depending on the project.
-        </p>
-        <p>
-          We provide a variety of services designed to help customers
-          find the right solution for their needs. Services can be
-          customized depending on the project.
-        </p>
-        <p>
-          We provide a variety of services designed to help customers
-          find the right solution for their needs. Services can be
-          customized depending on the project.
-        </p>
+        @@answer
       </div>
     </div>
   </div>

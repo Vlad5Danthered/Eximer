@@ -1,0 +1,48 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/slider/slider.html')
+-->
+
+<section class="slider swiper" data-slider aria-label="Акції та пропозиції">
+  <div class="slider__wrapper swiper-wrapper">
+
+    <!-- Слайд 1 -->
+    <div class="slider__slide swiper-slide">
+      <div class="slider__content">
+        <div class="slider__text">
+          <h2 class="slider__title"><span>Бачити чітко.</span><span>Жити комфортно.</span></h2>
+          <p class="slider__description">Професійний підбір окулярів та контактних лінз в оптиці «Ексімер» — з урахуванням особливостей вашого зору, способу життя та рекомендацій спеціалістів.</p>
+          <a class="btn" href="#book">Записатися на підбір</a>
+        </div>
+      </div>
+      <figure class="slider__media"><img src="img/slider-2.png" alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору"></figure>
+    </div>
+
+    <!-- Слайд 2 -->
+    <div class="slider__slide swiper-slide">
+      <div class="slider__content">
+        <div class="slider__text">
+          <h2 class="slider__title">Знижка на апаратне лікування для дітей 20%</h2>
+          <p class="slider__description">вул. Незалежності, 8В, Одеса</p>
+          <a class="btn" href="#book">Записатися на підбір</a>
+        </div>
+      </div>
+      <figure class="slider__media"><img src="img/Hero.png" alt="Хлопчик дивиться в апарат для перевірки зору" loading="lazy"></figure>
+    </div>
+
+  </div>
+
+  <!-- Стрелки вне слайдов: не двигаются при смене слайда -->
+  <div class="slider__controls">
+    <button class="btn btn--icon slider__arrow slider__arrow--prev" type="button" aria-label="Попередній слайд">
+      <svg width="16" height="16">
+        <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+      </svg>
+    </button>
+    <button class="btn btn--icon slider__arrow slider__arrow--next" type="button" aria-label="Наступний слайд">
+       <svg width="16" height="16">
+        <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+      </svg>
+    </button>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/trust/trust.html')
+-->
+
+<section class="container trust">
+  <div class="trust__header">
+    <h2 class="trust__title">Чому нам довіряють?</h2>
+    <p class="trust__subtitle">В «Ексімер» ви отримуєте повний цикл турботи: від професійної перевірки гостроти зору до виготовлення окулярів за рецептом на високоточному автоматизованому обладнанні.</p>
+  </div>
+  
+  <div class="trust__cards">
+    @@include('../trust-card/trust-card.html', {
+      "icon": "glasses",
+      "title": "Підбір окулярів",
+      "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec <br>neque at et. Sed id a purus purus elementum eu. Vulputate et augue faucibus ipsum.Lorem ipsum dolor sit amet consectetur.Fermentum dictum non porttitor pellentesque sem ac. "
+    })
+
+    @@include('../trust-card/trust-card.html', {
+      "icon": "glasses-line",
+      "title": "Підбір контактних лінз",
+      "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec <br>neque at et. Sed id a purus purus elementum eu. Vulputate et augue faucibus ipsum.Lorem ipsum dolor sit amet consectetur.Fermentum dictum non porttitor pellentesque sem ac. "
+    })
+
+    @@include('../trust-card/trust-card.html', {
+      "icon": "pencil",
+      "title": "Виготовлення окулярів",
+      "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec <br>neque at et. Sed id a purus purus elementum eu. Vulputate et augue faucibus ipsum.Lorem ipsum dolor sit amet consectetur.Fermentum dictum non porttitor pellentesque sem ac. "
+    })
+
+    @@include('../trust-card/trust-card.html', {
+      "icon": "presentation",
+      "title": "Навчання по використовуванню та консультація по догляду МКЛ",
+      "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec <br>neque at et. Sed id a purus purus elementum eu. Vulputate et augue faucibus ipsum.Lorem ipsum dolor sit amet consectetur.Fermentum dictum non porttitor pellentesque sem ac. "
+    })
+  </div>
+</section>
