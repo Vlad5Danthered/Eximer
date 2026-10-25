@@ -46,7 +46,7 @@
 
         @media (max-width: $screen-md - 1) {
           font-size: $font-size !important;
-          line-height: $line-height - 2 !important;
+          line-height: $line-height !important;
         }
 
         @media (max-width: $screen-sm) {

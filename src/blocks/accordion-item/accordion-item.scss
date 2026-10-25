@@ -141,7 +141,7 @@
         }
         color: $white;
         font-size: $font-size;
-        line-height: $line-height - 2;
+        line-height: $line-height;
 
         @media (max-width: $screen-md - 1) {
           font-size: $font-size-body;

@@ -22,6 +22,11 @@
   color: $white;
   padding-top: 32px;
   padding-bottom: 32px;
+  
+  &__header > p, & > p {
+    font-size: $font-size;
+    line-height: $line-height;
+  }
 
   @media (min-width: $screen-lg) {
     padding-top: 48px;
@@ -36,6 +41,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  &__cards + p {
+    margin-top: 0;
   }
 
   &__title {
