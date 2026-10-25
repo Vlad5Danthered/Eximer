@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока slider-brands, его элементов,
+// В этом файле должны быть стили для БЭМ-блока brands, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очерёдность:
 // 1. Стилевые правила для этого селектора. 2. @media этого контекста.
@@ -15,7 +15,65 @@
 @use '../../scss/variables' as *;
 @use '../../scss/mixins' as *;
 
-.slider-brands {
+.brands {
   $block-name: &; // #{$block-name}__element
+  background-color: $btn-color;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
+  @media (min-width: $screen-lg) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  &__row {
+    display: grid;
+    gap: 16px 0;
+    grid-template-columns: repeat(2, 1fr);
+
+    & > :last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    & > div {
+      margin-right: 16px;
+    }
+    
+    @media (min-width: $screen-md) {
+      gap: 24px;
+      grid-template-columns: repeat(7, 1fr);
+
+      & > :last-child {
+        grid-column: auto;
+        justify-self: auto;
+      }
+
+      & > div {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      transform: translateY(-50%);
+      right: -7.5px;
+      width: 1px;
+      height: 64px;
+      background-color: white;
+
+      @media (min-width: $screen-md) {
+        right: -11.5px;
+      }
+    }
+  }
 }

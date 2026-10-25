@@ -38,8 +38,8 @@
     "text-section": [],
     "services": [],
     "services-card": [],
-    "slider-brands": [],
-    "locationsr": []
+    "locationsr": [],
+    "brands": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",
