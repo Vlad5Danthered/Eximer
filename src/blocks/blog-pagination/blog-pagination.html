@@ -1,0 +1,40 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/blog-pagination/blog-pagination.html')
+-->
+
+<div class="blog-pagination" label="Посторінкова навігація" role="navigation">
+  <ol class="blog-pagination__list list-nostyled">
+    <li class="blog-pagination__item">
+      <a class="btn btn--icon blog-pagination__arrow blog-pagination__arrow--prev blog-pagination__arrow--disabled" href="#" aria-label="Попередній слайд">
+        <svg width="16" height="16">
+          <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+        </svg>
+      </a>
+    </li>
+
+    <li class="blog-pagination__item">
+      <a class="btn btn--icon" href="#">
+        <span>1</span>
+      </a>
+    </li>
+    <li class="blog-pagination__item">
+      <a class="btn btn--icon" href="#">
+        <span>2</span>
+      </a>
+    </li>
+    <li class="blog-pagination__item">
+      <a class="btn btn--icon" href="#">
+        <span>3</span>
+      </a>
+    </li>
+
+    <li class="blog-pagination__item">
+      <a class="btn btn--icon blog-pagination__arrow blog-pagination__arrow--next" href="#" aria-label="Наступний слайд">
+        <svg width="16" height="16">
+          <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+        </svg>
+      </a>
+    </li>
+  </ol>
+</div>

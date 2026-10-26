@@ -41,8 +41,12 @@
 @use '../blocks/text-section/text-section';
 @use '../blocks/services/services';
 @use '../blocks/services-card/services-card';
-@use '../blocks/locationsr/locationsr';
+@use '../blocks/locations/locations';
 @use '../blocks/brands/brands';
+@use '../blocks/blog-card/blog-card';
+@use '../blocks/blogs/blogs';
+@use '../blocks/blog-pagination/blog-pagination';
+@use '../blocks/article/article';
 
 // Подключения из addCssAfter:
 @use './print' as *;

@@ -1,0 +1,24 @@
+<!--DEV
+Для использования этого файла как шаблона:
+@@include('blocks/blog-card/blog-card.html', {
+  "image": "1",
+  "title": "Підбір окулярів",
+  "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec neque at et. Sed id a purus..."
+})
+-->
+
+<article class="blog-card">
+  <div class="row">
+    <div class="blog-card__image">
+      <picture>
+        <source srcset="img/blog-@@image.webp" type="image/webp">
+        <img src="img/blog-@@image.png" alt="card" width="400" height="248">
+      </picture>
+    </div>
+    <div class="blog-card__text">
+      <h3 class="blog-card__title">@@title</h3>
+      <p class="blog-card__description">@@text</p>
+      <a href="#">Детальніше</a>
+    </div>
+  </div>
+</article>

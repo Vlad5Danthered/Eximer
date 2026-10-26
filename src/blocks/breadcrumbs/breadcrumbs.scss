@@ -1,17 +1,24 @@
 @use '../../scss/variables.scss' as *;
 
 .breadcrumbs {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  $block-name: &;   // #{$block-name}__element
+  
+  @media (min-width: $screen-md) {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
 
-  $block-name: &;
+  @media (min-width: $screen-lg) {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 
-  // #{$block-name}__element
 
   &__list {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
+    margin: 0 !important;
   }
 
 
@@ -26,14 +33,15 @@
 
     @media (min-width: $screen-md) {
       margin-bottom: 0;
+
+      &:not(:last-child)::after {
+        content: '/'; // U+276F, HTML-код &#10095; CSS-код  \276F - Прававя угловая скобка
+        display: inline-block;
+        padding: 12px 6px;
+        color: $primary-color;
+      }
     }
 
-    &:not(:last-child)::after {
-      content: '/'; // U+276F, HTML-код &#10095; CSS-код  \276F - Прававя угловая скобка
-      display: inline-block;
-      padding: 12px 6px;
-      color: $primary-color;
-    }
 
     &:last-child {
 
@@ -42,6 +50,42 @@
         color: $input-color-placeholder;
         padding-right: 12px;
         padding-left: 0;
+      }
+    }
+
+    @media (max-width: $screen-md - 1 ) {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+
+      &:nth-last-child(2) {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        padding: 12px;
+        padding-left: 28px;
+        
+
+        span {
+          color: $primary-color !important;
+        }
+
+
+        &:not(:last-child)::after {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-image: url(../img/bottom-arrow-b.svg);
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(90deg);
+          color: $primary-color;
+        }
       }
     }
   }

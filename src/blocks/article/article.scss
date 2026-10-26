@@ -1,0 +1,152 @@
+// В этом файле должны быть стили для БЭМ-блока article, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Раскомментируйте нужные подключения:
+// @use 'sass:math' as *;    // math.div(), math.round(), math.ceil(), math.floor(), math.percentage(), math.max(), math.min(), math.random()
+// @use 'sass:list' as *;    // list.append(), list.join(), list.nth(), list.length(), list.index(), list.separator()
+// @use 'sass:map' as *;     // map.get(), map.set(), map.merge(), map.keys(), map.values(), map.has-key(), map.remove()
+// @use 'sass:color' as *;   // color.adjust(), color.scale(), color.mix(), color.change(), color.complement(), color.invert()
+// @use 'sass:string' as *;  // string.index(), string.slice(), string.to-upper-case(), string.to-lower-case(), string.length(), string.insert()
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.article {
+  $block-name: &; // #{$block-name}__element
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 96px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-bottom: 64px;
+  }
+
+  &__inner {
+    max-width: $screen-lg;
+  }
+
+  &__header {
+    img {
+      margin-top: 24px;
+      border-radius: 24px;
+    }
+  }
+
+  &__content {
+    h2 {
+      margin-top: 96px;
+    }
+    h3 {
+      margin-top: 48px;
+    }
+    h4 {
+      color: $text-color;
+      margin-bottom: 24px;
+    }
+
+    .p,
+    p,
+    ul,
+    ol,
+    dl,
+    blockquote,
+    pre,
+    address,
+    figure {
+      margin-top: 16px;
+      margin-bottom: 24px;
+
+      :is(&) + :is(&) {
+        margin-top: 24px !important;
+      }
+
+      &:first-child {
+        margin-top: 16px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: $screen-lg - 1) {
+      h2 {
+        margin-top: 64px;
+      }
+      h3 {
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+
+      h4 {
+        margin-bottom: 16px;
+      }
+
+      .p,
+      p,
+      ul,
+      ol,
+      dl,
+      blockquote,
+      pre,
+      address,
+      figure {
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        :is(&) + :is(&) {
+          margin-top: 16px !important;
+        }
+
+        &:first-child {
+          margin-top: 16px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @media (max-width: $screen-md - 1) {
+      h1, h2, h3, h4 {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &--privacy-policy &__content {
+    h2 {
+      margin-top: 48px;
+    }
+    h3 {
+      margin-top: 24px;
+    }
+    h4 {
+      color: $text-color;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $screen-lg - 1) {
+      h2 {
+        margin-top: 32px;
+      }
+      h3 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+
+      h4 {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+}

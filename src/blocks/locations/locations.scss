@@ -1,4 +1,4 @@
-// В этом файле должны быть стили для БЭМ-блока locationsr, его элементов,
+// В этом файле должны быть стили для БЭМ-блока locations, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очерёдность:
 // 1. Стилевые правила для этого селектора. 2. @media этого контекста.
@@ -15,12 +15,19 @@
 @use '../../scss/variables' as *;
 @use '../../scss/mixins' as *;
 
-.locationsr {
+.locations {
   $block-name: &; // #{$block-name}__element  padding-top: 32px;
-  padding-top: 32px;
+  
+  &--first {
+    padding-top: 32px;
 
-  @media (min-width: $screen-lg) {
-    padding-top: 48px;
+    @media (min-width: $screen-lg) {
+      padding-top: 48px;
+    }
+  }
+
+  @media (max-width: $screen-md - 1) {
+    padding-top: 16px;
   }
 
   &__wrapper {
@@ -91,6 +98,126 @@
       width: 100vw;
       max-width: 100vw;
       margin-left: calc(50% - 50vw);
+    }
+  }
+
+    &__optic {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 16px;
+    color: $white;
+    background-color: $primary-color;
+    border-radius: 16px;
+
+    @media (min-width: $screen-md) {
+      gap: 24px;
+      padding: 24px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 32px 24px;
+    }
+
+    a:not(.btn) {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-word;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &-icon {
+      flex: 0 0 auto;
+      color: $white;
+    }
+
+    &-address {
+      font-style: normal;
+      font-size: $font-size-desktop;
+      line-height: $line-height-desktop;
+      font-weight: 500;
+      margin-top: 0;
+
+      @media (max-width: $screen-lg - 1) {
+        font-size: $font-size-tablet;
+        line-height: $line-height-tablet;
+      }
+
+      @media (max-width: $screen-md - 1) {
+        font-size: $font-size;
+        line-height: $line-height;
+      }
+    }
+
+    &-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 32px;
+      }
+    }
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+
+      @media (min-width: $screen-sm) {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 180px 1fr;
+      }
+
+      @media (min-width: $screen-xl) {
+        grid-template-columns: 200px 1fr;
+        gap: 16px;
+      }
+    }
+
+    &-label {
+      color: $white;
+      margin: 0;
+    }
+
+    &-value {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: $font-size;
+      line-height: $line-height;
+    }
+
+    &-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      .btn {
+        flex: 1 1 100%;
+
+        @media (min-width: $screen-sm) {
+          flex: 0 1 auto;
+          min-width: 200px;
+        }
+      }
     }
   }
 }

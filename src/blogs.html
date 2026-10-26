@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="xyz" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <title>Blog page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас вимкнено JavaScript. Приносимо свої вибачення, але це ускладнює користування цим сайтом.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main>
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <div class="container blogs">
+          <div class="blogs__header">
+            <h1>Блог</h1>
+          </div>
+          <div class="blogs__cards">
+            
+            @@include('blocks/blog-card/blog-card.html', {
+              "image": "1",
+              "title": "Підбір окулярів",
+              "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec neque at et. Sed id a purus..."
+            })
+            @@include('blocks/blog-card/blog-card.html', {
+              "image": "1",
+              "title": "Підбір окулярів",
+              "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec neque at et. Sed id a purus..."
+            })
+            @@include('blocks/blog-card/blog-card.html', {
+              "image": "1",
+              "title": "Підбір окулярів",
+              "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec neque at et. Sed id a purus..."
+            })
+            @@include('blocks/blog-card/blog-card.html', {
+              "image": "1",
+              "title": "Підбір окулярів",
+              "text": "Lorem ipsum dolor sit amet consectetur. Fermentum dictum non porttitor pellentesque sem ac. Nam in nec neque at et. Sed id a purus..."
+            })
+
+          </div>
+
+          @@include('blocks/blog-pagination/blog-pagination.html')
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/footer-contact-form/footer-contact-form.html')
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

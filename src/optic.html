@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js  page  no-transition" lang="xyz" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас вимкнено JavaScript. Приносимо свої вибачення, але це ускладнює користування цим сайтом.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main>
+        @@include('blocks/breadcrumbs/breadcrumbs.html')
+
+        <!-- @@include('blocks/locations/locations.html') -->
+        <section class="locations">
+          <div class="container locations__optics">
+            <h2>Оптики Ексімер</h2>
+            <div class="locations__wrapper">
+              <div class="locations__optic">
+                <div class="locations__optic-head">
+                  <svg width="50" height="52">
+                    <use xlink:href="img/sprite-svg.svg#pin"></use>
+                  </svg>
+                  <address class="locations__optic-address">Київ, вул. Ділова (Димитрова), 5-Б</address>
+                </div>
+
+                <div class="locations__optic-body">
+                  <div class="locations__optic-col">
+                    <div class="locations__optic-row">
+                      <div class="locations__optic-label h5">Контакт-центр:</div>
+                      <div class="locations__optic-value">
+                        <a href="tel:+380442386800">+38 (044) 238-68-00</a>
+                        <a href="tel:+380962386800">+38 (096) 238 68 00</a>
+                        <a href="tel:+380992386800">+38 (099) 238-68-00</a>
+                      </div>
+                    </div>
+                    <div class="locations__optic-row">
+                      <div class="locations__optic-label h5">Менеджер контролю якості сервісу:</div>
+                      <div class="locations__optic-value">
+                        <a href="mailto:service@eximer.org.ua">service@eximer.org.ua</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="locations__optic-col">
+                    <div class="locations__optic-row">
+                      <div class="locations__optic-label h5">E-mail:</div>
+                      <div class="locations__optic-value">
+                        <a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a>
+                      </div>
+                    </div>
+                    <div class="locations__optic-row">
+                      <div class="locations__optic-label h5">Робочий час:</div>
+                      <div class="locations__optic-value">Пн. – сб.: 9:00-18:00 за попереднім записом.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="locations__optic-btns">
+                  <a href="#" class="btn btn--white">Записатися на прийом</a>
+                  <a href="#" class="btn btn--white">Відкрити в Google Maps</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="locations__map">
+            <div class="container">
+              <h2>"Ексімер" Google Maps</h2>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10430.654381872831!2d30.51261937621524!3d50.43045895252124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf1cefddf77f%3A0xaf4d5ec6995f8cb6!2z0JXQutGB0ZbQvNC10YAsINC60LvRltC90ZbQutCwINC-0YTRgtCw0LvRjNC80L7Qu9C-0LPRltGX!5e0!3m2!1sru!2sua!4v1792951263711!5m2!1sru!2sua" class="locations__map-iframe" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </section>
+
+        @@include('blocks/services/services.html', {
+          "child": false
+        })
+
+        @@include('blocks/brands/brands.html')
+
+        @@include('blocks/text-section/text-section.html')
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/footer-contact-form/footer-contact-form.html')
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

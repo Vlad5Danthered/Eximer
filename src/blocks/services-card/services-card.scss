@@ -59,7 +59,7 @@
   &__image {
     padding: 0 !important;
     @include col(xl, 3);
-    @include col(md, 5);
+    @include col(md, 4);
     // @include col(sm, 5);
     @include col(xs, 12);
 

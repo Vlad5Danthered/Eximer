@@ -38,8 +38,12 @@
     "text-section": [],
     "services": [],
     "services-card": [],
-    "locationsr": [],
-    "brands": []
+    "locations": [],
+    "brands": [],
+    "blog-card": [],
+    "blogs": [],
+    "blog-pagination": [],
+    "article": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",

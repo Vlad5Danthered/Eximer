@@ -1,0 +1,104 @@
+// В этом файле должны быть стили для БЭМ-блока blog-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Раскомментируйте нужные подключения:
+// @use 'sass:math' as *;    // math.div(), math.round(), math.ceil(), math.floor(), math.percentage(), math.max(), math.min(), math.random()
+// @use 'sass:list' as *;    // list.append(), list.join(), list.nth(), list.length(), list.index(), list.separator()
+// @use 'sass:map' as *;     // map.get(), map.set(), map.merge(), map.keys(), map.values(), map.has-key(), map.remove()
+// @use 'sass:color' as *;   // color.adjust(), color.scale(), color.mix(), color.change(), color.complement(), color.invert()
+// @use 'sass:string' as *;  // string.index(), string.slice(), string.to-upper-case(), string.to-lower-case(), string.length(), string.insert()
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.blog-card {
+  $block-name: &; // #{$block-name}__element
+
+  background-color: $primary-color;
+  color: $white;
+  padding: 24px;
+  border-radius: 16px;
+  // display: flex;
+  
+  .row {
+    gap: 24px 0;
+    justify-content: center;
+  }
+
+  @media (max-width: $screen-md - 1) {
+    padding: 16px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include col(xl, 9);
+    @include col(lg, 8);
+    @include col(md, 6);
+    @include col(xs, 12);
+
+    @media (max-width: $screen-md - 1) {
+      max-width: 400px;
+      align-self: center;
+    }
+
+    a {
+      color: inherit !important;
+      margin: 12px 0 0;
+
+      @media (min-width: $screen-md) {
+        margin: 24px 0 0;
+      }
+    }
+
+    p + p:not(:last-child) {
+      margin: 12px 0 0;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-desktop;
+    font-weight: 500;
+    line-height: $line-height-desktop;
+    margin: 0 0 12px;
+    color: inherit;
+
+    @media (min-width: $screen-md) {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__description {
+    font-size: $font-size;
+    font-weight: 400;
+    line-height: $line-height;
+    margin: 0;
+  }
+
+  &__image {
+    // padding: 0 !important;
+    @include col(xl, 3);
+    @include col(lg, 4);
+    @include col(md, 6);
+    @include col(xs, 12);
+
+    picture {
+      display: flex;
+    }
+    img {
+      border-radius: 16px;
+
+      @media (max-width: $screen-md - 1) {
+        margin: auto;
+      }
+    }
+  }
+}

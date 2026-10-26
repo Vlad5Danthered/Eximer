@@ -1,55 +1,173 @@
 @use '../../scss/variables.scss' as *;
 @use '../../scss/mixins.scss' as *;
 
-$gray-lightest: hsl(0deg 0% 90%) !default;
-$text-color-muted: hsl(0deg 0% 50%) !default;
-$border-color: hsl(0deg 0% 60%) !default;
-$font-size-small: 0.75em !default;
-$line-height: 1.375em !default;
-$field-padding-vertical: 0.3em !default;
-$field-padding-horizontal: 0.7em !default;
+*:has(> table:not(.table-notstyle)) {
+	overflow: visible;
+}
 
-table,
-.table {
-  $block-name: &; // #{$block-name}__element
-
-  // table-layout: fixed;
-  border-collapse: collapse;
+table:not(.table-notstyle) {
+	display: block;
   width: 100%;
+  min-width: 0;
+	max-width: 100%;
+  
+  padding: 12px 0;
+  
+  @media (min-width: $screen-lg) {
+    width: max-content;
+    min-width: 800px;
 
-  /* Включает одинаковую ширину цифр И перечеркнутый ноль */
-  font-variant-numeric: tabular-nums slashed-zero;
-  font-feature-settings: "tnum", "zero"; /* Резерв для старых браузеров */
-  border: 1px solid $border-color;
-  margin: $line-height 0;
+    padding: 16px;
+  }
 
-  caption {
-    padding-top: 0.4em;
-    text-align: right;
-    caption-side: bottom;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-radius: 16px;
+
+	background-color: #0735d9;
+	color: #fff;
+
+	thead,
+	tbody {
+		width: 100%;
+	}
+
+	tr {
+		min-width: 800px;
+    width: 100%;
+	}
+
+	th,
+	td,
+  td strong {
+		text-align: left;
+		vertical-align: middle;
+		white-space: nowrap;
+
+    @media (min-width: $screen-md) {
+      font-size: $font-size-tablet;
+      line-height: $line-height-tablet;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: $font-size-desktop;
+      line-height: $line-height-desktop;
+
+      width: 33.333%;
+		  min-width: 200px;
+    }
+	}
+
+  tr:first-child {
+		th,
+		td {
+			position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        background-color: $white;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+
+      }
+      &:first-child::after {
+        left: auto;
+        right: 0;
+      }
+      &:first-child::after,
+      &:last-child::after {
+        width: calc(100% - 16px);
+
+        @media (min-width: $screen-md) {
+          width: calc(100% - 24px);
+        }
+      }
+		}
+	}
+
+	th, td:has(strong) {
+    padding: 16px;
+		font-weight: 500;
+    position: relative;
+
     font-size: $font-size-sm;
-    line-height: 1em;
-    color: $text-muted;
-  }
+    line-height: $line-height-sm;
+    
+		@media (min-width: $screen-md) {
+      padding: 24px;
+    }
+	}
 
-  th {
-    text-align: left;
-  }
-
-  th,
   td {
-    padding: $field-padding-vertical $field-padding-horizontal;
-    vertical-align: top;
-    border-bottom: 1px solid $border-color;
+    padding: 16px;
+    font-weight: 400;
+    
+    font-size: $font-size-sm - 2;
+    line-height: $line-height-sm - 4;
 
-    &:not(:first-child) {
-      border-left: 1px solid $border-color;
+    strong {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+      font-weight: 500;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 18px 24px;
     }
   }
 
-  // &__header {}
+	th:first-child,
+	td:first-child {
+    padding-left: 16px;
+    
+    @media (min-width: $screen-md) {
+      padding-left: 24px;
+    }
+	}
 
-  // &__body {}
+	th:last-child,
+	td:last-child {
+    padding-right: 16px;
+    
+    @media (min-width: $screen-md) {
+      padding-right: 24px;
+    }
+	}
 
-  // &__footer {}
+	tbody tr:last-child td {
+		padding-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      padding-bottom: 24px;
+    }
+	}
+
+	scrollbar-width: thin;
+	scrollbar-color: #fff $primary-color;
+
+	&::-webkit-scrollbar {
+		height: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $primary-color;
+		border: 2px solid $primary-color;
+		border-radius: 10px;
+		background-clip: content-box;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #fff;
+		border: 2px solid $primary-color;
+		border-radius: 10px;
+		background-clip: padding-box;
+	}
 }
