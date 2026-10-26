@@ -68,7 +68,10 @@
     }
     img {
       border-radius: 16px;
-      margin: auto;
+
+      @media (max-width: $screen-md - 1) {
+        margin: auto;
+      }
     }
   }
 }

@@ -63,11 +63,20 @@ $bp-mobile: $screen-md - 1;
     max-width: $container-xxl;
     margin: 0 auto;
     padding: 48px $lg-grid-gutter * 0.5;
+  }
+  
+  @media (min-width: $screen-md) {
     box-sizing: content-box;
   }
 
   &__text {
     max-width: min(570px, 46%);
+
+    @media (max-width: $screen-smm + 40) {
+      .btn {
+        width: 100%;
+      }
+    }
   }
 
   @media (max-width: $bp-tablet) {
