@@ -69,6 +69,10 @@
     }
   }
 
+  a {
+    color: inherit !important;
+  }
+
   &__input {
     position: absolute;
     top: 0;

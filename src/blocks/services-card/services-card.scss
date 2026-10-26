@@ -27,6 +27,7 @@
 
   @media (max-width: $screen-md - 1) {
     flex-direction: column;
+    padding: 16px;
   }
 
   &__text {

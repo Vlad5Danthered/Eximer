@@ -6,6 +6,7 @@
   $block-name: &; // #{$block-name}__element
 
   z-index: 10;
+  display: flex;
 
   &__list {
     display: flex;

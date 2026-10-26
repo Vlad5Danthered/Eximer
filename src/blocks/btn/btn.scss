@@ -9,7 +9,7 @@
   margin: 0;
   border: 0;
 
-  padding: 10px 24px;
+  padding: 16px 32px;
   gap: 8px;
   white-space: nowrap;
   vertical-align: middle;
@@ -29,14 +29,14 @@
   transition: all 0.2s ease;
   cursor: pointer;
 
-  @media (min-width: $screen-xl) {
-    padding: 16px 32px;
-  }
+  // @media (min-width: $screen-xl) {
+  //   padding: 16px 32px;
+  // }
 
-  @media (min-width: $screen-lg) {
-    padding: 14px 32px;
-    gap: 12px;
-  }
+  // @media (min-width: $screen-lg) {
+  //   padding: 14px 32px;
+  //   gap: 12px;
+  // }
 
   &:hover,
   &:focus {

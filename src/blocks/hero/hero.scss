@@ -67,7 +67,7 @@ $bp-mobile: $screen-md - 1;
   }
 
   &__text {
-    max-width: min(520px, 46%);
+    max-width: min(570px, 46%);
   }
 
   @media (max-width: $bp-tablet) {
