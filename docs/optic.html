@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html class="no-js page no-transition" lang="xyz" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+
+    <!-- <meta name="theme-color" content="#0b1020">
+  Изменяет цвет элементов интерфейса браузера и операционной системы в соответствии с фирменным стилем вашей компании. Используйте атрибут media, чтобы задать один цвет для светлого режима и другой — для темного.
+-->
+    <!-- <meta name="color-scheme" content="light"> -->
+    <!-- <meta name="color-scheme" content="dark"> -->
+    <!-- <meta name="color-scheme" content="light dark"> -->
+
+    <!-- OpenGraph microdata
+<meta property="og:url"      content="https://www.your-domain.com/your-page.html">
+<meta property="og:type"          content="website">
+<meta property="og:title"         content="Your Website Title">
+<meta property="og:description"   content="Your description">
+<meta property="og:image"         content="https://www.your-domain.com/path/image.jpg">
+<meta property="og:locale"        content="uk_UA">
+-->
+    <!-- <link rel="canonical" href="https://www.your-domain.com/"> -->
+    <!-- <link rel="preload" href="assets/fonts/roboto-v18-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/roboto-v18-cyrillic_latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/noto-sans-v7-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin> -->
+
+    <!-- Подключить на наужных страницах -->
+    <!-- <link rel="preload" href="css/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="css/swiper-bundle.min.css" rel="stylesheet" media="screen"></noscript>
+<link rel="preload" href="css/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="css/fancybox.css" rel="stylesheet" media="screen"></noscript> -->
+    <!-- Основной бандл стилей -->
+    <link
+      rel="preload"
+      href="css/style.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      ">
+    <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
+  </head>
+
+  <body>
+    <noscript
+      >У вас вимкнено JavaScript. Приносимо свої вибачення, але це ускладнює користування цим
+      сайтом.</noscript
+    >
+
+    <div class="page__inner">
+      <div class="page__content">
+        <header class="page-header container">
+          <div class="page-header__inner">
+            <a href="/" class="logo" title="Title">
+              <img src="img/logo.svg" alt="logo">
+            </a>
+
+            <nav id="main-nav" class="main-nav">
+              <button id="main-nav-toggler" class="main-nav__toggler burger"><span></span></button>
+              <ul class="main-nav__list">
+                <!-- <li class="main-nav__item  main-nav__item--active">
+      <a href="" class="main-nav__link">
+        Страницы
+      </a>
+      <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-2">
+        <ul class="main-nav__list  main-nav__list--lvl-2">
+          <li class="main-nav__item  main-nav__item--lvl-2">
+            <a href="" class="main-nav__link  main-nav__link--lvl-2">
+              Контакты
+            </a>
+          </li>
+          <li class="main-nav__item  main-nav__item--lvl-2">
+            <a href="" class="main-nav__link  main-nav__link--lvl-2">
+              Услуги
+            </a>
+            <div class="main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-3">
+              <ul class="main-nav__list  main-nav__list--lvl-3">
+                <li class="main-nav__item  main-nav__item--lvl-3">
+                  <a href="" class="main-nav__link  main-nav__link--lvl-3">
+                    Вёрстка HTML-CSS
+                  </a>
+                </li>
+                <li class="main-nav__item  main-nav__item--lvl-3">
+                  <a href="" class="main-nav__link  main-nav__link--lvl-3">
+                    Стриптиз
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li> -->
+
+                <div class="lang-switcher" data-lang-switcher>
+                  <button
+                    class="lang-switcher__toggle"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="lang-list"
+                    title="Англ. язык">
+                    <span class="lang-switcher__current">Укр</span>
+                    <svg
+                      class="lang-switcher__icon"
+                      width="16"
+                      height="16"
+                      aria-hidden="true"
+                      focusable="false">
+                      <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+                    </svg>
+                  </button>
+
+                  <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                    <li class="lang-switcher__item">
+                      <a
+                        href="#"
+                        class="lang-switcher__link"
+                        lang="uk"
+                        hreflang="uk"
+                        title="Укр. язык"
+                        >Англ</a
+                      >
+                    </li>
+                    <li class="lang-switcher__item">
+                      <a
+                        href="#"
+                        class="lang-switcher__link"
+                        lang="ru"
+                        hreflang="ru"
+                        title="Рус. язык"
+                        >Рус</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link"> Про нас </a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link"> Дітям </a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link"> Акції </a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link"> Контакти </a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link"> Блог </a>
+                </li>
+                <li class="main-nav__item main-nav__item--btn">
+                  <a href="#" class="btn">Записатися на підбір</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="page-header__right">
+              <div class="lang-switcher" data-lang-switcher>
+                <button
+                  class="lang-switcher__toggle"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="lang-list"
+                  title="Англ. язык">
+                  <span class="lang-switcher__current">Укр</span>
+                  <svg
+                    class="lang-switcher__icon"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                    focusable="false">
+                    <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+                  </svg>
+                </button>
+
+                <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                  <li class="lang-switcher__item">
+                    <a
+                      href="#"
+                      class="lang-switcher__link"
+                      lang="uk"
+                      hreflang="uk"
+                      title="Укр. язык"
+                      >Англ</a
+                    >
+                  </li>
+                  <li class="lang-switcher__item">
+                    <a
+                      href="#"
+                      class="lang-switcher__link"
+                      lang="ru"
+                      hreflang="ru"
+                      title="Рус. язык"
+                      >Рус</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <a class="btn" href="">
+                <span>Записатися на підбір</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <nav class="container breadcrumbs" aria-label="Breadcrumb">
+            <ol
+              class="list-nostyled breadcrumbs__list"
+              itemscope
+              itemtype="https://schema.org/BreadcrumbList">
+              <li
+                class="breadcrumbs__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem">
+                <a href="#" itemprop="item" class="breadcrumbs__link">
+                  <span itemprop="name">Главная</span>
+                </a>
+                <meta itemprop="position" content="1">
+              </li>
+
+              <li
+                class="breadcrumbs__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem">
+                <a href="#" itemprop="item" class="breadcrumbs__link">
+                  <span itemprop="name">Страница 1</span>
+                </a>
+                <meta itemprop="position" content="2">
+              </li>
+
+              <li
+                class="breadcrumbs__item"
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem">
+                <span class="breadcrumbs__link" aria-current="page">
+                  <span itemprop="name">Страница 2</span>
+                </span>
+                <meta itemprop="position" content="3">
+              </li>
+            </ol>
+          </nav>
+
+          <!-- 
+
+<section class="locations locations--first">
+  <div class="container locations__optics">
+    <h2>Оптики Ексімер</h2>
+    <div class="locations__wrapper row">
+      <div class="locations__accordion accordion__list">
+        
+
+<div class="accordion__item">
+  <button class="accordion__question" aria-expanded="false">
+    <div class="accordion__header">
+      
+      <svg width="50" height="52">
+        <use xlink:href="img/sprite-svg.svg#pin"></use>
+      </svg>
+      
+      <span>м. Київ</span>
+    </div>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="51" height="51" rx="25.5" stroke="white" fill="currentColor"/>
+      <path d="M31.5326 28.5302C31.4629 28.6001 31.3801 28.6556 31.2889 28.6934C31.1978 28.7313 31.1 28.7508 31.0013 28.7508C30.9026 28.7508 30.8049 28.7313 30.7137 28.6934C30.6225 28.6556 30.5397 28.6001 30.4701 28.5302L26.0019 24.062L21.5326 28.5302C21.3917 28.6711 21.2006 28.7502 21.0013 28.7502C20.802 28.7502 20.6109 28.6711 20.4701 28.5302C20.3292 28.3893 20.25 28.1982 20.25 27.9989C20.25 27.7997 20.3292 27.6086 20.4701 27.4677L25.4701 22.4677C25.5397 22.3977 25.6225 22.3423 25.7137 22.3044C25.8049 22.2666 25.9026 22.2471 26.0013 22.2471C26.1 22.2471 26.1978 22.2666 26.2889 22.3044C26.3801 22.3423 26.4629 22.3977 26.5326 22.4677L31.5326 27.4677C31.6025 27.5373 31.6579 27.6201 31.6958 27.7113C31.7337 27.8025 31.7531 27.9002 31.7531 27.9989C31.7531 28.0976 31.7337 28.1954 31.6958 28.2865C31.6579 28.3777 31.6025 28.4605 31.5326 28.5302Z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="accordion__answer">
+    <div class="accordion__answer-content">
+      <div>
+        <span>вул. Ділова, 5Б, 5B</span><span><strong>Контакт-центр: </strong><a href="tel:+380962386800">+38 (096) 238 68 00</a></span><span><strong>E-mail: </strong><a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a></span><span><strong>Оптика: </strong><a href="#">Переглянути</a></span><div class="locations__btn-list"><a href="#" class="btn btn--white">Відкрити в Google Maps</a><a href="#" class="btn btn--white">Записатися на підбір</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <div class="locations__accordion accordion__list">
+        
+
+<div class="accordion__item">
+  <button class="accordion__question" aria-expanded="false">
+    <div class="accordion__header">
+      
+      <svg width="50" height="52">
+        <use xlink:href="img/sprite-svg.svg#pin"></use>
+      </svg>
+      
+      <span>м. Одеса</span>
+    </div>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="51" height="51" rx="25.5" stroke="white" fill="currentColor"/>
+      <path d="M31.5326 28.5302C31.4629 28.6001 31.3801 28.6556 31.2889 28.6934C31.1978 28.7313 31.1 28.7508 31.0013 28.7508C30.9026 28.7508 30.8049 28.7313 30.7137 28.6934C30.6225 28.6556 30.5397 28.6001 30.4701 28.5302L26.0019 24.062L21.5326 28.5302C21.3917 28.6711 21.2006 28.7502 21.0013 28.7502C20.802 28.7502 20.6109 28.6711 20.4701 28.5302C20.3292 28.3893 20.25 28.1982 20.25 27.9989C20.25 27.7997 20.3292 27.6086 20.4701 27.4677L25.4701 22.4677C25.5397 22.3977 25.6225 22.3423 25.7137 22.3044C25.8049 22.2666 25.9026 22.2471 26.0013 22.2471C26.1 22.2471 26.1978 22.2666 26.2889 22.3044C26.3801 22.3423 26.4629 22.3977 26.5326 22.4677L31.5326 27.4677C31.6025 27.5373 31.6579 27.6201 31.6958 27.7113C31.7337 27.8025 31.7531 27.9002 31.7531 27.9989C31.7531 28.0976 31.7337 28.1954 31.6958 28.2865C31.6579 28.3777 31.6025 28.4605 31.5326 28.5302Z" fill="currentColor"/>
+      </svg>
+    </span>
+  </button>
+
+  <div class="accordion__answer">
+    <div class="accordion__answer-content">
+      <div>
+        <span>вул. Незалежності (Армійська), 8-В</span><span><strong>Контакт-центр: </strong><a href="tel:+380671187007">+38 (067) 118 70 07</a></span><span><strong>E-mail: </strong><a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a></span><span><strong>Оптика: </strong><a href="#">Переглянути</a></span><div class="locations__btn-list"><a href="#" class="btn btn--white">Відкрити в Google Maps</a><a href="#" class="btn btn--white">Записатися на підбір</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="locations__map">
+    <div class="container">
+      <h2>"Ексімер" Google Maps</h2>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10430.654381872831!2d30.51261937621524!3d50.43045895252124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf1cefddf77f%3A0xaf4d5ec6995f8cb6!2z0JXQutGB0ZbQvNC10YAsINC60LvRltC90ZbQutCwINC-0YTRgtCw0LvRjNC80L7Qu9C-0LPRltGX!5e0!3m2!1sru!2sua!4v1792951263711!5m2!1sru!2sua" class="locations__map-iframe" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</section>
+ -->
+          <section class="locations">
+            <div class="container locations__optics">
+              <h2>Оптики Ексімер</h2>
+              <div class="locations__wrapper">
+                <div class="locations__optic">
+                  <div class="locations__optic-head">
+                    <svg width="50" height="52">
+                      <use xlink:href="img/sprite-svg.svg#pin"></use>
+                    </svg>
+                    <address class="locations__optic-address">
+                      Київ, вул. Ділова (Димитрова), 5-Б
+                    </address>
+                  </div>
+
+                  <div class="locations__optic-body">
+                    <div class="locations__optic-col">
+                      <div class="locations__optic-row">
+                        <div class="locations__optic-label h5">Контакт-центр:</div>
+                        <div class="locations__optic-value">
+                          <a href="tel:+380442386800">+38 (044) 238-68-00</a>
+                          <a href="tel:+380962386800">+38 (096) 238 68 00</a>
+                          <a href="tel:+380992386800">+38 (099) 238-68-00</a>
+                        </div>
+                      </div>
+                      <div class="locations__optic-row">
+                        <div class="locations__optic-label h5">
+                          Менеджер контролю якості сервісу:
+                        </div>
+                        <div class="locations__optic-value">
+                          <a href="mailto:service@eximer.org.ua">service@eximer.org.ua</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="locations__optic-col">
+                      <div class="locations__optic-row">
+                        <div class="locations__optic-label h5">E-mail:</div>
+                        <div class="locations__optic-value">
+                          <a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a>
+                        </div>
+                      </div>
+                      <div class="locations__optic-row">
+                        <div class="locations__optic-label h5">Робочий час:</div>
+                        <div class="locations__optic-value">
+                          Пн. – сб.: 9:00-18:00 за попереднім записом.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="locations__optic-btns">
+                    <a href="#" class="btn btn--white">Записатися на прийом</a>
+                    <a href="#" class="btn btn--white">Відкрити в Google Maps</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="locations__map">
+              <div class="container">
+                <h2>"Ексімер" Google Maps</h2>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10430.654381872831!2d30.51261937621524!3d50.43045895252124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf1cefddf77f%3A0xaf4d5ec6995f8cb6!2z0JXQutGB0ZbQvNC10YAsINC60LvRltC90ZbQutCwINC-0YTRgtCw0LvRjNC80L7Qu9C-0LPRltGX!5e0!3m2!1sru!2sua!4v1792951263711!5m2!1sru!2sua"
+                class="locations__map-iframe"
+                height="650"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </section>
+
+          <section class="container services">
+            <div class="services__header">
+              <h2 class="services__title">Ексімер дорослим</h2>
+              <p>
+                Сучасний ритм життя дорослої людини — це години за моніторами, водіння автомобіля в
+                сутінках, робота з документами та нескінченний потік візуальної інформації. Окуляри
+                вже давно перестали бути просто інструментом корекції. Сьогодні це — ваш комфорт,
+                захист від перевтоми та важливий елемент персонального стилю.
+              </p>
+              <p>Оптика «Ексімер» пропонує рішення, що адаптовані під ваш спосіб життя:</p>
+            </div>
+
+            <div class="services__cards">
+              <article class="services-card">
+                <div class="services-card__image">
+                  <picture>
+                    <source srcset="img/services-1.webp" type="image/webp">
+                    <img src="img/services-1.png" alt="card" width="400" height="248">
+                  </picture>
+                </div>
+                <div class="services-card__text">
+                  <h3 class="services-card__title">Комп'ютерні та офісні лінзи</h3>
+                  <p class="services-card__description">
+                    Знімають синдром сухого ока, прибирають головний біль від перенапруження та
+                    блокують випромінювання екранів.
+                  </p>
+                </div>
+              </article>
+
+              <article class="services-card">
+                <div class="services-card__image">
+                  <picture>
+                    <source srcset="img/services-2.webp" type="image/webp">
+                    <img src="img/services-2.png" alt="card" width="400" height="248">
+                  </picture>
+                </div>
+                <div class="services-card__text">
+                  <h3 class="services-card__title">Трендові оправи</h3>
+                  <p class="services-card__description">
+                    Від стриманої класики для ділових зустрічей до сміливих дизайнерських моделей,
+                    що підкреслять ваші найкращі риси.
+                  </p>
+                </div>
+              </article>
+
+              <article class="services-card">
+                <div class="services-card__image">
+                  <picture>
+                    <source srcset="img/services-3.webp" type="image/webp">
+                    <img src="img/services-3.png" alt="card" width="400" height="248">
+                  </picture>
+                </div>
+                <div class="services-card__text">
+                  <h3 class="services-card__title">Прогресивна оптика (3-в-1)</h3>
+                  <p class="services-card__description">
+                    Спеціальні лінзи для тих, кому за 40. Вони дозволяють чітко бачити і текст у
+                    смартфоні, і монітор комп'ютера, і дорогу вдалині — без необхідності постійно
+                    змінювати окуляри.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <p>
+              Не адаптуйтеся до втоми очей — адаптуйте свій зір до максимальних результатів разом з
+              «Ексімер».
+            </p>
+          </section>
+
+          <div class="container brands">
+            <div class="brands__row">
+              <div class="brands__card"><img src="img/dior.svg" alt="dior logo"></div>
+              <div class="brands__card"><img src="img/prada.svg" alt="prada logo"></div>
+              <div class="brands__card"><img src="img/guess.svg" alt="guess logo"></div>
+              <div class="brands__card"><img src="img/miu-miu.svg" alt="miu miu logo"></div>
+              <div class="brands__card"><img src="img/gucci.svg" alt="gucci logo"></div>
+              <div class="brands__card">
+                <img src="img/armani-exchange.svg" alt="armani exchange logo">
+              </div>
+              <div class="brands__card"><img src="img/ray-ban.svg" alt="ray ban logo"></div>
+            </div>
+          </div>
+
+          <div class="container text-section">
+            <h2 class="text-section__title">Про нас</h2>
+            <p>
+              Оптика «Ексімер» створена для тих, хто не готовий на компроміси, коли йдеться про зір.
+              Наша головна перевага — синергія медичної експертизи та сучасних технологій оптичної
+              корекції.
+            </p>
+            <p>
+              Ми не просто продаємо окуляри чи контактні лінзи — ми розв'язуємо проблеми із зором
+              будь-якої складності. Наші оптометристи постійно підвищують кваліфікацію, щоб
+              пропонувати вам найсучасніші рішення: лінзи з захистом від синього спектра (гаджетів),
+              розвантажувальні, мультифокальні та фотохромні лінзи останнього покоління.
+            </p>
+          </div>
+        </main>
+      </div>
+
+      <div class="page__footer-wrapper">
+        <section class="footer-contact-form container">
+          <div class="footer-contact-form__inner">
+            <div class="footer-contact-form__image">
+              <img src="img/Vector.svg" alt="logo" aria-hidden="true">
+            </div>
+            <div class="footer-contact-form__form">
+              <form class="footer-contact-form__form-inner" action="#" method="post" novalidate>
+                <h2 class="footer-contact-form__title">Записатися на прийом</h2>
+
+                <div class="footer-contact-form__field">
+                  <label class="field-text field-required">
+                    <span class="field-text__name">Ваше ім'я</span>
+                    <span class="field-text__input-wrap">
+                      <input
+                        class="field-text__input"
+                        type="text"
+                        name="name"
+                        placeholder="Ваше ім'я"
+                        required>
+                      <span class="field-text__help-text"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="footer-contact-form__row">
+                  <div class="footer-contact-form__col">
+                    <label class="field-text field-required">
+                      <span class="field-text__name">Телефон</span>
+                      <span class="field-text__input-wrap">
+                        <input
+                          class="field-text__input"
+                          type="tel"
+                          name="phone"
+                          placeholder="+380 (__) ___ -__-__"
+                          required>
+                        <span class="field-text__help-text"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="footer-contact-form__col">
+                    <div class="field-select field-required" data-name="select-name">
+                      <span class="field-select__name">Вибір міста</span>
+                      <button
+                        class="field-select__trigger"
+                        type="button"
+                        aria-haspopup="listbox"
+                        aria-expanded="false">
+                        <span class="field-select__value">Одеса</span>
+                        <svg class="field-select__arrow" width="20" height="20" aria-hidden="true">
+                          <use xlink:href="img/sprite-svg.svg#bottom-arrow-b"></use>
+                        </svg>
+                      </button>
+                      <ul class="field-select__dropdown" role="listbox">
+                        <li
+                          class="field-select__option field-select__option--selected"
+                          role="option"
+                          data-value="odesa"
+                          aria-selected="true">
+                          Одеса
+                        </li>
+                        <li
+                          class="field-select__option"
+                          role="option"
+                          data-value="kyiv"
+                          aria-selected="false">
+                          Київ
+                        </li>
+                        <li
+                          class="field-select__option"
+                          role="option"
+                          data-value="lviv"
+                          aria-selected="false">
+                          Львів
+                        </li>
+                        <li
+                          class="field-select__option"
+                          role="option"
+                          data-value="kharkiv"
+                          aria-selected="false">
+                          Харків
+                        </li>
+                      </ul>
+                      <input type="hidden" name="select-name" value="odesa">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-contact-form__field">
+                  <label class="field-text">
+                    <span class="field-text__name">Коментар</span>
+                    <span class="field-text__input-wrap">
+                      <textarea
+                        class="field-text__input"
+                        name="comment"
+                        placeholder="Задайте питання нашому фахівцю"></textarea>
+                      <span class="field-text__help-text"></span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="footer-contact-form__field">
+                  <div class="field-checkbox">
+                    <label class="field-checkbox__name">
+                      <input
+                        class="field-checkbox__input"
+                        type="checkbox"
+                        name="consent"
+                        required>
+                      <span class="field-checkbox__name-text"
+                        >Я даю згоду на обробку моїх персональних даних з гідно з
+                        <a href="#">Політикою Конфіденційності</a>. Відправляючи контактні дані, ви
+                        погоджуєтесь з <a href="#">Політикою конфіденційності</a></span
+                      >
+                    </label>
+                  </div>
+                </div>
+
+                <div class="footer-contact-form__field">
+                  <button class="btn btn--white footer-contact-form__submit" type="submit">
+                    Записатися
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <footer class="page-footer container">
+          <div class="page-footer__inner">
+            <div class="page-footer__info">
+              <a href="/" class="logo" title="Title">
+                <img src="img/logo.svg" alt="logo">
+              </a>
+
+              <ul class="page-footer__social list-nostyled">
+                <li class="page-footer__social-item">
+                  <a href="#" aria-label="facebook" target="_blank" rel="nofollow noopener">
+                    <svg width="48" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite-svg.svg#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-footer__social-item">
+                  <a href="#" aria-label="instagram" target="_blank" rel="nofollow noopener">
+                    <svg width="48" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite-svg.svg#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-footer__social-item">
+                  <a href="#" aria-label="youtube" target="_blank" rel="nofollow noopener">
+                    <svg width="48" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite-svg.svg#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-footer__social-item">
+                  <a href="#" aria-label="Telegram" target="_blank" rel="nofollow noopener">
+                    <svg width="48" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite-svg.svg#telegram"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="page-footer__social-item">
+                  <a href="#" aria-label="tiktok" target="_blank" rel="nofollow noopener">
+                    <svg width="48" height="48" aria-hidden="true">
+                      <use xlink:href="img/sprite-svg.svg#tiktok"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <div class="page-footer__copyright">
+                <p>© 2025 Ексімер Оптика. Всі права захищені.</p>
+                <p>
+                  Матеріали сайту мають інформаційний характер та не є медичною консультацією.
+                  Діагностику та лікування призначає лікар. 18+. Самолікування може бути шкідливим
+                  для вашого здоров’я.
+                </p>
+              </div>
+            </div>
+
+            <nav id="page-footer-nav" class="page-footer__nav">
+              <ul class="page-footer__nav-list list-nostyled">
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Про нас </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Дітям </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Акції </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Контакти </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Блог </a>
+                </li>
+              </ul>
+            </nav>
+
+            <nav class="page-footer__nav">
+              <ul class="page-footer__nav-list list-nostyled">
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Політика конфіденційності </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Програма лояльності </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Гарантія та повернення </a>
+                </li>
+                <li class="page-footer__nav-item">
+                  <a href="#" class="page-footer__nav-link"> Публічна оферта </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <a href="#" class="btn btn--icon to-top" id="toTop" title="Нагору">
+            <svg width="20" height="20">
+              <use xlink:href="img/sprite-svg.svg#bottom-arrow-b"></use>
+            </svg>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script> -->
+    <script src="js/script.min.js"></script>
+  </body>
+</html>
