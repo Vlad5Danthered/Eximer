@@ -62,11 +62,20 @@
         <header class="page-header container">
           <div class="page-header__inner">
             <a href="/" class="logo" title="Title">
-              <img src="img/logo.svg" alt="logo">
+              <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
             </a>
 
             <nav id="main-nav" class="main-nav">
-              <button id="main-nav-toggler" class="main-nav__toggler burger"><span></span></button>
+              <button
+                id="main-nav-toggler"
+                class="main-nav__toggler burger"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                data-label-open="Відкрити меню"
+                data-label-close="Закрити меню">
+                <span></span>
+              </button>
               <ul class="main-nav__list">
                 <div class="lang-switcher" data-lang-switcher>
                   <button
@@ -87,7 +96,7 @@
                     </svg>
                   </button>
 
-                  <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                  <ul class="list-nostyled lang-switcher__list">
                     <li class="lang-switcher__item">
                       <a
                         href="#"
@@ -151,7 +160,7 @@
                   </svg>
                 </button>
 
-                <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                <ul class="list-nostyled lang-switcher__list">
                   <li class="lang-switcher__item">
                     <a
                       href="#"
@@ -329,7 +338,7 @@
         <section class="footer-contact-form container">
           <div class="footer-contact-form__inner">
             <div class="footer-contact-form__image">
-              <img src="img/Vector.svg" alt="logo" aria-hidden="true">
+              <img src="img/Vector.svg" alt="logo" aria-hidden="true" loading="lazy">
             </div>
             <div class="footer-contact-form__form">
               <form class="footer-contact-form__form-inner" action="#" method="post" novalidate>
@@ -457,7 +466,7 @@
           <div class="page-footer__inner">
             <div class="page-footer__info">
               <a href="/" class="logo" title="Title">
-                <img src="img/logo.svg" alt="logo">
+                <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
               </a>
 
               <ul class="page-footer__social list-nostyled">

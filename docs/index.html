@@ -62,11 +62,20 @@
         <header class="page-header container">
           <div class="page-header__inner">
             <a href="/" class="logo" title="Title">
-              <img src="img/logo.svg" alt="logo">
+              <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
             </a>
 
             <nav id="main-nav" class="main-nav">
-              <button id="main-nav-toggler" class="main-nav__toggler burger"><span></span></button>
+              <button
+                id="main-nav-toggler"
+                class="main-nav__toggler burger"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                data-label-open="Відкрити меню"
+                data-label-close="Закрити меню">
+                <span></span>
+              </button>
               <ul class="main-nav__list">
                 <div class="lang-switcher" data-lang-switcher>
                   <button
@@ -87,7 +96,7 @@
                     </svg>
                   </button>
 
-                  <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                  <ul class="list-nostyled lang-switcher__list">
                     <li class="lang-switcher__item">
                       <a
                         href="#"
@@ -151,7 +160,7 @@
                   </svg>
                 </button>
 
-                <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                <ul class="list-nostyled lang-switcher__list">
                   <li class="lang-switcher__item">
                     <a
                       href="#"
@@ -230,9 +239,15 @@
               </div>
             </div>
             <figure class="hero__media">
-              <img
-                src="img/Hero.png"
-                alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору">
+              <picture>
+                <source srcset="img/Hero.webp" type="image/webp">
+                <img
+                  src="img/Hero.png"
+                  alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору"
+                  width="1920"
+                  height="560"
+                  fetchpriority="high">
+              </picture>
             </figure>
           </section>
 
@@ -267,6 +282,7 @@
                   <svg width="66" height="66">
                     <use xlink:href="img/sprite-svg.svg#glasses"></use>
                   </svg>
+                  <!-- <img src="img/icon.svg" width="66" height="66" alt="Підбір окулярів" aria-hidden="true" loading="lazy"> -->
                 </div>
                 <div class="trust-card__text">
                   <h3 class="trust-card__title">Підбір окулярів</h3>
@@ -284,6 +300,7 @@
                   <svg width="66" height="66">
                     <use xlink:href="img/sprite-svg.svg#glasses-line"></use>
                   </svg>
+                  <!-- <img src="img/icon.svg" width="66" height="66" alt="Підбір контактних лінз" aria-hidden="true" loading="lazy"> -->
                 </div>
                 <div class="trust-card__text">
                   <h3 class="trust-card__title">Підбір контактних лінз</h3>
@@ -301,6 +318,7 @@
                   <svg width="66" height="66">
                     <use xlink:href="img/sprite-svg.svg#pencil"></use>
                   </svg>
+                  <!-- <img src="img/icon.svg" width="66" height="66" alt="Виготовлення окулярів" aria-hidden="true" loading="lazy"> -->
                 </div>
                 <div class="trust-card__text">
                   <h3 class="trust-card__title">Виготовлення окулярів</h3>
@@ -318,6 +336,7 @@
                   <svg width="66" height="66">
                     <use xlink:href="img/sprite-svg.svg#presentation"></use>
                   </svg>
+                  <!-- <img src="img/icon.svg" width="66" height="66" alt="Навчання по використовуванню та консультація по догляду МКЛ" aria-hidden="true" loading="lazy"> -->
                 </div>
                 <div class="trust-card__text">
                   <h3 class="trust-card__title">
@@ -352,9 +371,14 @@
                   </div>
                 </div>
                 <figure class="slider__media">
-                  <img
-                    src="img/slider-2.png"
-                    alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору">
+                  <picture>
+                    <source srcset="img/slider-2.webp" type="image/webp">
+                    <img
+                      src="img/slider-2.png"
+                      alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору"
+                      width="1920"
+                      height="560">
+                  </picture>
                 </figure>
               </div>
 
@@ -368,10 +392,14 @@
                   </div>
                 </div>
                 <figure class="slider__media">
-                  <img
-                    src="img/Hero.png"
-                    alt="Хлопчик дивиться в апарат для перевірки зору"
-                    loading="lazy">
+                  <picture>
+                    <source srcset="img/Hero.webp" type="image/webp">
+                    <img
+                      src="img/Hero.png"
+                      alt="Усміхнена дівчина піднімає окуляри на лоб і показує пальцем вгору"
+                      width="1920"
+                      height="560">
+                  </picture>
                 </figure>
               </div>
             </div>
@@ -414,7 +442,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-1.webp" type="image/webp">
-                    <img src="img/services-1.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-1.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -430,7 +463,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-2.webp" type="image/webp">
-                    <img src="img/services-2.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-2.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -446,7 +484,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-3.webp" type="image/webp">
-                    <img src="img/services-3.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-3.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -482,7 +525,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-1.webp" type="image/webp">
-                    <img src="img/services-1.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-1.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -498,7 +546,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-2.webp" type="image/webp">
-                    <img src="img/services-2.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-2.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -514,7 +567,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-3.webp" type="image/webp">
-                    <img src="img/services-3.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-3.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -535,32 +593,59 @@
 
           <div class="container brands">
             <div class="brands__row">
-              <div class="brands__card"><img src="img/dior.svg" alt="dior logo"></div>
-              <div class="brands__card"><img src="img/prada.svg" alt="prada logo"></div>
-              <div class="brands__card"><img src="img/guess.svg" alt="guess logo"></div>
-              <div class="brands__card"><img src="img/miu-miu.svg" alt="miu miu logo"></div>
-              <div class="brands__card"><img src="img/gucci.svg" alt="gucci logo"></div>
               <div class="brands__card">
-                <img src="img/armani-exchange.svg" alt="armani exchange logo">
+                <img src="img/dior.svg" alt="dior logo" width="150" height="80" loading="lazy">
               </div>
-              <div class="brands__card"><img src="img/ray-ban.svg" alt="ray ban logo"></div>
+              <div class="brands__card">
+                <img src="img/prada.svg" alt="prada logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img src="img/guess.svg" alt="guess logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/miu-miu.svg"
+                  alt="miu miu logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img src="img/gucci.svg" alt="gucci logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/armani-exchange.svg"
+                  alt="armani exchange logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/ray-ban.svg"
+                  alt="ray ban logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
             </div>
           </div>
 
-          <section class="locations locations--first">
+          <section class="locations">
             <div class="container locations__optics">
               <h2>Оптики Ексімер</h2>
               <div class="locations__wrapper row">
                 <div class="locations__accordion accordion__list">
                   <div class="accordion__item">
                     <button class="accordion__question" aria-expanded="false">
-                      <div class="accordion__header">
+                      <span class="accordion__header">
                         <svg width="50" height="52">
                           <use xlink:href="img/sprite-svg.svg#pin"></use>
                         </svg>
 
                         <span>м. Київ</span>
-                      </div>
+                      </span>
                       <span class="accordion__icon" aria-hidden="true">
                         <svg
                           width="52"
@@ -608,13 +693,13 @@
                 <div class="locations__accordion accordion__list">
                   <div class="accordion__item">
                     <button class="accordion__question" aria-expanded="false">
-                      <div class="accordion__header">
+                      <span class="accordion__header">
                         <svg width="50" height="52">
                           <use xlink:href="img/sprite-svg.svg#pin"></use>
                         </svg>
 
                         <span>м. Одеса</span>
-                      </div>
+                      </span>
                       <span class="accordion__icon" aria-hidden="true">
                         <svg
                           width="52"
@@ -665,7 +750,6 @@
               <div class="container">
                 <h2>"Ексімер" Google Maps</h2>
               </div>
-
               <!-- У цього iframe не повинно бути width, а height дорівнює 650 -->
               <div class="locations__map-iframe">
                 <iframe
@@ -675,7 +759,7 @@
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+              </div>
             </div>
           </section>
 
@@ -685,9 +769,9 @@
             <div class="accordion__list">
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>З якого віку перевіряєте зір дитині?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -724,9 +808,9 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>З якого віку перевіряєте зір дитині?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -763,11 +847,11 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span
                       >Чому потрібно протирати окуляри саме спеціальними серветками/розчинами?</span
                     >
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -808,9 +892,9 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>Чи є обмеження в строках експлуатації сонцезахисних окулярів?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -851,9 +935,9 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>Як продовжити "життя" окулярів?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -894,9 +978,9 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>У чому різниця між дорогими та дешевими лінзами?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -937,9 +1021,9 @@
 
               <div class="accordion__item">
                 <button class="accordion__question" aria-expanded="false">
-                  <div class="accordion__header">
+                  <span class="accordion__header">
                     <span>Що означають усі ці числа на моєму рецепті на окуляри?</span>
-                  </div>
+                  </span>
                   <span class="accordion__icon" aria-hidden="true">
                     <svg
                       width="52"
@@ -986,7 +1070,7 @@
         <section class="footer-contact-form container">
           <div class="footer-contact-form__inner">
             <div class="footer-contact-form__image">
-              <img src="img/Vector.svg" alt="logo" aria-hidden="true">
+              <img src="img/Vector.svg" alt="logo" aria-hidden="true" loading="lazy">
             </div>
             <div class="footer-contact-form__form">
               <form class="footer-contact-form__form-inner" action="#" method="post" novalidate>
@@ -1114,7 +1198,7 @@
           <div class="page-footer__inner">
             <div class="page-footer__info">
               <a href="/" class="logo" title="Title">
-                <img src="img/logo.svg" alt="logo">
+                <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
               </a>
 
               <ul class="page-footer__social list-nostyled">

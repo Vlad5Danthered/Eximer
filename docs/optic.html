@@ -62,11 +62,20 @@
         <header class="page-header container">
           <div class="page-header__inner">
             <a href="/" class="logo" title="Title">
-              <img src="img/logo.svg" alt="logo">
+              <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
             </a>
 
             <nav id="main-nav" class="main-nav">
-              <button id="main-nav-toggler" class="main-nav__toggler burger"><span></span></button>
+              <button
+                id="main-nav-toggler"
+                class="main-nav__toggler burger"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="main-nav"
+                data-label-open="Відкрити меню"
+                data-label-close="Закрити меню">
+                <span></span>
+              </button>
               <ul class="main-nav__list">
                 <div class="lang-switcher" data-lang-switcher>
                   <button
@@ -87,7 +96,7 @@
                     </svg>
                   </button>
 
-                  <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                  <ul class="list-nostyled lang-switcher__list">
                     <li class="lang-switcher__item">
                       <a
                         href="#"
@@ -151,7 +160,7 @@
                   </svg>
                 </button>
 
-                <ul class="list-nostyled lang-switcher__list" id="lang-list">
+                <ul class="list-nostyled lang-switcher__list">
                   <li class="lang-switcher__item">
                     <a
                       href="#"
@@ -222,85 +231,8 @@
             </ol>
           </nav>
 
-          <!-- 
-
-<section class="locations locations--first">
-  <div class="container locations__optics">
-    <h2>Оптики Ексімер</h2>
-    <div class="locations__wrapper row">
-      <div class="locations__accordion accordion__list">
-        
-
-<div class="accordion__item">
-  <button class="accordion__question" aria-expanded="false">
-    <div class="accordion__header">
-      
-      <svg width="50" height="52">
-        <use xlink:href="img/sprite-svg.svg#pin"></use>
-      </svg>
-      
-      <span>м. Київ</span>
-    </div>
-    <span class="accordion__icon" aria-hidden="true">
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0.5" y="0.5" width="51" height="51" rx="25.5" stroke="white" fill="currentColor"/>
-      <path d="M31.5326 28.5302C31.4629 28.6001 31.3801 28.6556 31.2889 28.6934C31.1978 28.7313 31.1 28.7508 31.0013 28.7508C30.9026 28.7508 30.8049 28.7313 30.7137 28.6934C30.6225 28.6556 30.5397 28.6001 30.4701 28.5302L26.0019 24.062L21.5326 28.5302C21.3917 28.6711 21.2006 28.7502 21.0013 28.7502C20.802 28.7502 20.6109 28.6711 20.4701 28.5302C20.3292 28.3893 20.25 28.1982 20.25 27.9989C20.25 27.7997 20.3292 27.6086 20.4701 27.4677L25.4701 22.4677C25.5397 22.3977 25.6225 22.3423 25.7137 22.3044C25.8049 22.2666 25.9026 22.2471 26.0013 22.2471C26.1 22.2471 26.1978 22.2666 26.2889 22.3044C26.3801 22.3423 26.4629 22.3977 26.5326 22.4677L31.5326 27.4677C31.6025 27.5373 31.6579 27.6201 31.6958 27.7113C31.7337 27.8025 31.7531 27.9002 31.7531 27.9989C31.7531 28.0976 31.7337 28.1954 31.6958 28.2865C31.6579 28.3777 31.6025 28.4605 31.5326 28.5302Z" fill="currentColor"/>
-      </svg>
-    </span>
-  </button>
-
-  <div class="accordion__answer">
-    <div class="accordion__answer-content">
-      <div>
-        <span>вул. Ділова, 5Б, 5B</span><span><strong>Контакт-центр: </strong><a href="tel:+380962386800">+38 (096) 238 68 00</a></span><span><strong>E-mail: </strong><a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a></span><span><strong>Оптика: </strong><a href="#">Переглянути</a></span><div class="locations__btn-list"><a href="#" class="btn btn--white">Відкрити в Google Maps</a><a href="#" class="btn btn--white">Записатися на підбір</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-      <div class="locations__accordion accordion__list">
-        
-
-<div class="accordion__item">
-  <button class="accordion__question" aria-expanded="false">
-    <div class="accordion__header">
-      
-      <svg width="50" height="52">
-        <use xlink:href="img/sprite-svg.svg#pin"></use>
-      </svg>
-      
-      <span>м. Одеса</span>
-    </div>
-    <span class="accordion__icon" aria-hidden="true">
-      <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0.5" y="0.5" width="51" height="51" rx="25.5" stroke="white" fill="currentColor"/>
-      <path d="M31.5326 28.5302C31.4629 28.6001 31.3801 28.6556 31.2889 28.6934C31.1978 28.7313 31.1 28.7508 31.0013 28.7508C30.9026 28.7508 30.8049 28.7313 30.7137 28.6934C30.6225 28.6556 30.5397 28.6001 30.4701 28.5302L26.0019 24.062L21.5326 28.5302C21.3917 28.6711 21.2006 28.7502 21.0013 28.7502C20.802 28.7502 20.6109 28.6711 20.4701 28.5302C20.3292 28.3893 20.25 28.1982 20.25 27.9989C20.25 27.7997 20.3292 27.6086 20.4701 27.4677L25.4701 22.4677C25.5397 22.3977 25.6225 22.3423 25.7137 22.3044C25.8049 22.2666 25.9026 22.2471 26.0013 22.2471C26.1 22.2471 26.1978 22.2666 26.2889 22.3044C26.3801 22.3423 26.4629 22.3977 26.5326 22.4677L31.5326 27.4677C31.6025 27.5373 31.6579 27.6201 31.6958 27.7113C31.7337 27.8025 31.7531 27.9002 31.7531 27.9989C31.7531 28.0976 31.7337 28.1954 31.6958 28.2865C31.6579 28.3777 31.6025 28.4605 31.5326 28.5302Z" fill="currentColor"/>
-      </svg>
-    </span>
-  </button>
-
-  <div class="accordion__answer">
-    <div class="accordion__answer-content">
-      <div>
-        <span>вул. Незалежності (Армійська), 8-В</span><span><strong>Контакт-центр: </strong><a href="tel:+380671187007">+38 (067) 118 70 07</a></span><span><strong>E-mail: </strong><a href="mailto:ek.inform@eximer.org.ua">ek.inform@eximer.org.ua</a></span><span><strong>Оптика: </strong><a href="#">Переглянути</a></span><div class="locations__btn-list"><a href="#" class="btn btn--white">Відкрити в Google Maps</a><a href="#" class="btn btn--white">Записатися на підбір</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-  <div class="locations__map">
-    <div class="container">
-      <h2>"Ексімер" Google Maps</h2>
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10430.654381872831!2d30.51261937621524!3d50.43045895252124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf1cefddf77f%3A0xaf4d5ec6995f8cb6!2z0JXQutGB0ZbQvNC10YAsINC60LvRltC90ZbQutCwINC-0YTRgtCw0LvRjNC80L7Qu9C-0LPRltGX!5e0!3m2!1sru!2sua!4v1792951263711!5m2!1sru!2sua" class="locations__map-iframe" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  </div>
-</section>
- -->
-          <section class="locations">
+          <!-- @ @include('blocks/locations/locations.html') -->
+          <section class="locations locations--first">
             <div class="container locations__optics">
               <h2>Оптики Ексімер</h2>
               <div class="locations__wrapper">
@@ -389,7 +321,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-1.webp" type="image/webp">
-                    <img src="img/services-1.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-1.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -405,7 +342,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-2.webp" type="image/webp">
-                    <img src="img/services-2.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-2.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -421,7 +363,12 @@
                 <div class="services-card__image">
                   <picture>
                     <source srcset="img/services-3.webp" type="image/webp">
-                    <img src="img/services-3.png" alt="card" width="400" height="248">
+                    <img
+                      src="img/services-3.png"
+                      alt="card"
+                      loading="lazy"
+                      width="400"
+                      height="248">
                   </picture>
                 </div>
                 <div class="services-card__text">
@@ -442,15 +389,42 @@
 
           <div class="container brands">
             <div class="brands__row">
-              <div class="brands__card"><img src="img/dior.svg" alt="dior logo"></div>
-              <div class="brands__card"><img src="img/prada.svg" alt="prada logo"></div>
-              <div class="brands__card"><img src="img/guess.svg" alt="guess logo"></div>
-              <div class="brands__card"><img src="img/miu-miu.svg" alt="miu miu logo"></div>
-              <div class="brands__card"><img src="img/gucci.svg" alt="gucci logo"></div>
               <div class="brands__card">
-                <img src="img/armani-exchange.svg" alt="armani exchange logo">
+                <img src="img/dior.svg" alt="dior logo" width="150" height="80" loading="lazy">
               </div>
-              <div class="brands__card"><img src="img/ray-ban.svg" alt="ray ban logo"></div>
+              <div class="brands__card">
+                <img src="img/prada.svg" alt="prada logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img src="img/guess.svg" alt="guess logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/miu-miu.svg"
+                  alt="miu miu logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img src="img/gucci.svg" alt="gucci logo" width="150" height="80" loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/armani-exchange.svg"
+                  alt="armani exchange logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
+              <div class="brands__card">
+                <img
+                  src="img/ray-ban.svg"
+                  alt="ray ban logo"
+                  width="150"
+                  height="80"
+                  loading="lazy">
+              </div>
             </div>
           </div>
 
@@ -475,7 +449,7 @@
         <section class="footer-contact-form container">
           <div class="footer-contact-form__inner">
             <div class="footer-contact-form__image">
-              <img src="img/Vector.svg" alt="logo" aria-hidden="true">
+              <img src="img/Vector.svg" alt="logo" aria-hidden="true" loading="lazy">
             </div>
             <div class="footer-contact-form__form">
               <form class="footer-contact-form__form-inner" action="#" method="post" novalidate>
@@ -603,7 +577,7 @@
           <div class="page-footer__inner">
             <div class="page-footer__info">
               <a href="/" class="logo" title="Title">
-                <img src="img/logo.svg" alt="logo">
+                <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
               </a>
 
               <ul class="page-footer__social list-nostyled">
