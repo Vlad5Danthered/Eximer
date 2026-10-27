@@ -83,8 +83,18 @@
     color: $text-color-strong;
     background-color: $white;
 
-    &:hover {
-      background-color: rgba($white, 0.9);
+    &:hover,
+    &:focus {
+      background-color: rgba($white, 0.9) !important;
+    }
+
+    &:active {
+      background-color: rgba($white, 0.8) !important;
+    }
+
+    &--disabled,
+    &:disabled {
+      background-color: hsl(-135deg 80% 90%);
     }
   }
 }

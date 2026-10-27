@@ -19,20 +19,37 @@
   $block-name: &; // #{$block-name}__element  padding-top: 32px;
   
   &--first {
-    padding-top: 32px;
+    #{$block-name}:not(&) {
+      padding-top: 16px;
+
+      @media (min-width: $screen-lg) {
+        padding-top: 48px;
+      }
+
+
+      @media (min-width: $screen-md) {
+        padding-top: 32px;
+      }
+    }
 
     @media (min-width: $screen-lg) {
-      padding-top: 48px;
+      padding-top: 24px;
     }
-  }
 
-  @media (max-width: $screen-md - 1) {
-    padding-top: 16px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 16px;
+    }
   }
 
   &__wrapper {
     gap: 24px 0;
-    margin-bottom: 24px;
+    
+    margin-bottom: 32px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 48px;
+    }
   }
 
   &__accordion {
@@ -94,7 +111,7 @@
   &__map {
     overflow: hidden;
     
-    &-iframe {
+    &-iframe iframe{
       width: 100vw;
       max-width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -216,6 +233,10 @@
         @media (min-width: $screen-sm) {
           flex: 0 1 auto;
           min-width: 200px;
+        }
+
+        @media (max-width: $screen-md - 1) {
+          justify-content: center;
         }
       }
     }

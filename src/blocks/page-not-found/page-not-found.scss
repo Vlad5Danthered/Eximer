@@ -1,0 +1,80 @@
+// В этом файле должны быть стили для БЭМ-блока page-not-found, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очерёдность:
+// 1. Стилевые правила для этого селектора. 2. @media этого контекста.
+// 3. Псевдоселекторы и псевдоэлементы. 4. Вложенные сторонние селекторы.
+// 5. БЭМ-элементы. 6. БЭМ-модификаторы.
+
+// Раскомментируйте нужные подключения:
+// @use 'sass:math' as *;    // math.div(), math.round(), math.ceil(), math.floor(), math.percentage(), math.max(), math.min(), math.random()
+// @use 'sass:list' as *;    // list.append(), list.join(), list.nth(), list.length(), list.index(), list.separator()
+// @use 'sass:map' as *;     // map.get(), map.set(), map.merge(), map.keys(), map.values(), map.has-key(), map.remove()
+// @use 'sass:color' as *;   // color.adjust(), color.scale(), color.mix(), color.change(), color.complement(), color.invert()
+// @use 'sass:string' as *;  // string.index(), string.slice(), string.to-upper-case(), string.to-lower-case(), string.length(), string.insert()
+
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+
+.page-not-found {
+  $block-name: &; // #{$block-name}__element
+
+  padding-top: 16px;
+  padding-bottom: 32px;
+
+  @media (min-width: $screen-lg) {
+    padding-top: 24px;
+    padding-bottom: 96px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 600;
+    color: $text-muted;
+    display: block;
+
+    margin-bottom: 16px;
+
+    @media (min-width: $screen-lg) {
+      font-size: 120px;
+      line-height: 120px;
+
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: $screen-md) {
+      font-size: 96px;
+      line-height: 100px;
+
+      margin-bottom: 32px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: $screen-lg;
+    align-items: start;
+
+    * {
+      margin: 0;
+    }
+
+    @media (min-width: $screen-md) {
+      gap: 24px;
+    }
+
+    @media (max-width: $screen-sm) {
+      align-items: normal;
+
+      .btn {
+        justify-content: center;
+      }
+    }
+  }
+}

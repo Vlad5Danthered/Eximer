@@ -7,7 +7,7 @@
       var targetTop = 0;
       var scrollDiff = (scroll - targetTop) * -1;
       animate({
-        duration: 200,
+        duration: 100,
         timing: function(timeFraction) {
           return Math.pow(timeFraction, 4); // https://learn.javascript.ru/js-animation
         },

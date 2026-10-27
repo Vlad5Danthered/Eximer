@@ -30,6 +30,15 @@
     }
   }
 
+  &__item.active a {
+    // background-color: rgba($primary-color, 0.8);
+    background: transparent !important;
+    border: 1px solid $btn-color;
+    color: $btn-color !important;
+    cursor: auto;
+    pointer-events: none;
+  }
+
   &__arrow {
     border: 1px solid $btn-color;
     cursor: pointer;

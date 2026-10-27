@@ -45,7 +45,6 @@
   &__question {
     display: flex;
     align-items: start;
-    align-self: center;
     justify-content: space-between;
     gap: 24px;
 
@@ -60,8 +59,9 @@
     transition: background-color 0.25s ease;
 
     &:focus-visible {
-      outline: 3px solid $white;
+      outline: 4px solid $black;
       outline-offset: -3px;
+      border-radius: 12px;
     }
 
     @media (max-width: $screen-md - 1) {
@@ -73,6 +73,7 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    align-self: center;
 
     font-family: $font-family;
     font-size: $font-size-desktop;
@@ -94,18 +95,18 @@
     transform: rotate(180deg);
 
     transition:
-      transform 0.2s ease,
-      background-color 0.2s ease,
-      color 0.2s ease;
+      transform 0.15s ease,
+      background-color 0.15s ease,
+      color 0.15s ease;
 
 
     rect {
       color: transparent;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
     path { 
       color: $white;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
   }
 

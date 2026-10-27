@@ -30,7 +30,7 @@
   }
   
   &__form {
-    @include col(xl, 4);
+    @include col(xl, 5);
     @include col(lg, 6);
     @include col(md, 7);
     color: white;

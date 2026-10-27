@@ -43,7 +43,8 @@
     "blog-card": [],
     "blogs": [],
     "blog-pagination": [],
-    "article": []
+    "article": [],
+    "page-not-found": []
   },
   "addCssBefore": [
     "src/scss/_coreui-custom.scss",

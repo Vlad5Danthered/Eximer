@@ -37,8 +37,11 @@
       &:not(:last-child)::after {
         content: '/'; // U+276F, HTML-код &#10095; CSS-код  \276F - Прававя угловая скобка
         display: inline-block;
-        padding: 12px 6px;
+        padding-left: 6px;
         color: $primary-color;
+        font-size: $font-size-body;
+        line-height: $line-height-body;
+        font-weight: 500;
       }
     }
 
@@ -47,9 +50,12 @@
 
       #{$block-name}__link {
         text-decoration: none;
-        color: $input-color-placeholder;
         padding-right: 12px;
         padding-left: 0;
+        
+        span {
+          color: $input-color-placeholder;
+        }
       }
     }
 
@@ -95,7 +101,6 @@
     font-size: $font-size-menu-sm;
     line-height: $line-height-menu-sm;
     font-weight: 500;
-    color: $primary-color;
     text-decoration: none;
     white-space: nowrap;
     transition: color .15s ease-in-out;
@@ -109,9 +114,13 @@
       line-height: $line-height-menu;
     }
 
-    &:hover,
-    &:focus {
-      color: $secondary-color;
+    span {
+      color: $primary-color;
+
+      &:hover,
+      &:focus {
+        color: $secondary-color;
+      }
     }
   }
 }

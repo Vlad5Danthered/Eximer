@@ -34,13 +34,14 @@
   @media (min-width: $screen-xl) {
     padding-bottom: 96px;
   }
-
+  
   @media (min-width: $screen-lg) {
+    padding-top: 24px;
     padding-bottom: 64px;
   }
 
-  @media (max-width: $screen-md - 1) {
-    padding-top: 32px;
+  @media (min-width: $screen-md) {
+    padding-top: 16px;
   }
 
   &, &__cards {

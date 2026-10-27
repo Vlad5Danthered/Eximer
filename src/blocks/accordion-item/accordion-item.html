@@ -10,14 +10,14 @@
 
 <div class="accordion__item">
   <button class="accordion__question" aria-expanded="false">
-    <div class="accordion__header">
+    <span class="accordion__header">
       @@if(iconShow)
       <svg width="50" height="52">
         <use xlink:href="img/sprite-svg.svg#@@icon"></use>
       </svg>
       @@endif
       <span>@@question</span>
-    </div>
+    </span>
     <span class="accordion__icon" aria-hidden="true">
       <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="0.5" y="0.5" width="51" height="51" rx="25.5" stroke="white" fill="currentColor"/>

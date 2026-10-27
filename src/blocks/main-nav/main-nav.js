@@ -15,12 +15,19 @@
     return !!nav && nav.classList.contains('main-nav--open');
   }
 
+  var LABEL_OPEN = toggler ? toggler.getAttribute('data-label-open') : '';
+  var LABEL_CLOSE = toggler ? toggler.getAttribute('data-label-close') : '';
+
   // Единая точка открытия/закрытия меню (кнопка и скролл не расходятся)
   function setMenuOpen(open) {
     if (!toggler || !nav) return;
     if (open && header) header.classList.remove(HIDDEN_CLASS);
     nav.classList.toggle('main-nav--open', open);
     toggler.classList.toggle('burger--close', open); // модификатор иконки (должен быть .burger)
+    toggler.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (LABEL_OPEN && LABEL_CLOSE) {
+      toggler.setAttribute('aria-label', open ? LABEL_CLOSE : LABEL_OPEN);
+    }
     // пока меню открыто - страница не скроллится (мобила + планшет)
     document.documentElement.classList.toggle(LOCK_CLASS, open && lockMq.matches);
   }

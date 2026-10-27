@@ -115,7 +115,7 @@ $slider-controls-space: $slider-arrow-size + $slider-controls-gap;
   // Стрелки лежат над слайдами и не двигаются при смене
   &__controls {
     position: absolute;
-    inset: auto 0 48px;
+    inset: auto 0 40px;
     z-index: 2;
     display: flex;
     gap: 24px;

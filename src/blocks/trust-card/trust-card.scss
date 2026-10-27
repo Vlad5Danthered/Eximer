@@ -33,6 +33,12 @@
     @media (min-width: $screen-md) {
       align-self: center;
     }
+
+    img {
+      width: 66px;
+      height: 66px;
+      max-width: none;
+    }
   }
 
 

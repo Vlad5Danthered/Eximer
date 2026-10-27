@@ -47,6 +47,7 @@
 @use '../blocks/blogs/blogs';
 @use '../blocks/blog-pagination/blog-pagination';
 @use '../blocks/article/article';
+@use '../blocks/page-not-found/page-not-found';
 
 // Подключения из addCssAfter:
 @use './print' as *;
