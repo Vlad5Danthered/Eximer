@@ -21,7 +21,13 @@
     cursor: pointer;
     text-align: left;
     box-shadow: none !important;
+
     @include field-text;
+
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 2px $secondary-color !important;
+    }
   }
 
   &__value {
@@ -50,7 +56,7 @@
     border: 1px solid $border-color;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
@@ -64,13 +70,14 @@
   &__option {
     padding: $field-padding-horizontal;
     cursor: pointer;
-    color: $title-color;
     line-height: $line-height-body;
     font-size: $font-size-body;
     color: $black;
     transition: background-color $transition-time ease;
 
-    &:hover {
+    &:hover,
+    &.is-focused,
+    &--focused {
       background-color: #F0F0F0;
     }
 

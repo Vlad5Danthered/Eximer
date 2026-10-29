@@ -2,10 +2,12 @@
 @@include('blocks/main-nav/main-nav.html')
 -->
 
-<nav id="main-nav" class="main-nav">
-  <button id="main-nav-toggler" class="main-nav__toggler  burger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-label-open="Відкрити меню" data-label-close="Закрити меню"><span></span></button>
+<nav id="main-nav" class="main-nav" aria-label="Головне меню">
+  <button type="button" id="main-nav-toggler" class="main-nav__toggler  burger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" data-label-open="Відкрити меню" data-label-close="Закрити меню"><span></span></button>
   <ul class="main-nav__list">
-    @@include('/../lang-switcher/lang-switcher.html')
+    <li class="main-nav__item">
+        @@include('/../lang-switcher/lang-switcher.html')
+    </li>
     <li class="main-nav__item">
       <a href="#" class="main-nav__link">
         Про нас
