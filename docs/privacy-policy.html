@@ -65,8 +65,9 @@
               <img src="img/logo.svg" alt="Logo Eximer" width="156" height="34">
             </a>
 
-            <nav id="main-nav" class="main-nav">
+            <nav id="main-nav" class="main-nav" aria-label="Головне меню">
               <button
+                type="button"
                 id="main-nav-toggler"
                 class="main-nav__toggler burger"
                 aria-label="Open menu"
@@ -77,48 +78,50 @@
                 <span></span>
               </button>
               <ul class="main-nav__list">
-                <div class="lang-switcher" data-lang-switcher>
-                  <button
-                    class="lang-switcher__toggle"
-                    type="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    aria-controls="lang-list"
-                    title="Англ. язык">
-                    <span class="lang-switcher__current">Укр</span>
-                    <svg
-                      class="lang-switcher__icon"
-                      width="16"
-                      height="16"
-                      aria-hidden="true"
-                      focusable="false">
-                      <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
-                    </svg>
-                  </button>
+                <li class="main-nav__item">
+                  <div class="lang-switcher" data-lang-switcher>
+                    <button
+                      class="lang-switcher__toggle"
+                      type="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="lang-list"
+                      title="Англ. язык">
+                      <span class="lang-switcher__current">Укр</span>
+                      <svg
+                        class="lang-switcher__icon"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                        focusable="false">
+                        <use xlink:href="img/sprite-svg.svg#bottom-arrow-s"></use>
+                      </svg>
+                    </button>
 
-                  <ul class="list-nostyled lang-switcher__list">
-                    <li class="lang-switcher__item">
-                      <a
-                        href="#"
-                        class="lang-switcher__link"
-                        lang="uk"
-                        hreflang="uk"
-                        title="Укр. язык"
-                        >Англ</a
-                      >
-                    </li>
-                    <li class="lang-switcher__item">
-                      <a
-                        href="#"
-                        class="lang-switcher__link"
-                        lang="ru"
-                        hreflang="ru"
-                        title="Рус. язык"
-                        >Рус</a
-                      >
-                    </li>
-                  </ul>
-                </div>
+                    <ul class="list-nostyled lang-switcher__list">
+                      <li class="lang-switcher__item">
+                        <a
+                          href="#"
+                          class="lang-switcher__link"
+                          lang="uk"
+                          hreflang="uk"
+                          title="Укр. язык"
+                          >Англ</a
+                        >
+                      </li>
+                      <li class="lang-switcher__item">
+                        <a
+                          href="#"
+                          class="lang-switcher__link"
+                          lang="ru"
+                          hreflang="ru"
+                          title="Рус. язык"
+                          >Рус</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
                 <li class="main-nav__item">
                   <a href="#" class="main-nav__link"> Про нас </a>
                 </li>
@@ -336,7 +339,7 @@
 
       <div class="page__footer-wrapper">
         <section class="footer-contact-form container">
-          <div class="footer-contact-form__inner">
+          <div class="footer-contact-form__inner" id="book">
             <div class="footer-contact-form__image">
               <img src="img/Vector.svg" alt="logo" aria-hidden="true" loading="lazy">
             </div>
@@ -350,6 +353,7 @@
                     <span class="field-text__input-wrap">
                       <input
                         class="field-text__input"
+                        autocomplete="name"
                         type="text"
                         name="name"
                         placeholder="Ваше ім'я"
@@ -366,6 +370,7 @@
                       <span class="field-text__input-wrap">
                         <input
                           class="field-text__input"
+                          autocomplete="tel"
                           type="tel"
                           name="phone"
                           placeholder="+380 (__) ___ -__-__"
@@ -516,7 +521,7 @@
               </div>
             </div>
 
-            <nav id="page-footer-nav" class="page-footer__nav">
+            <nav id="page-footer-nav" class="page-footer__nav" aria-label="Розділи сайту">
               <ul class="page-footer__nav-list list-nostyled">
                 <li class="page-footer__nav-item">
                   <a href="#" class="page-footer__nav-link"> Про нас </a>
@@ -536,7 +541,7 @@
               </ul>
             </nav>
 
-            <nav class="page-footer__nav">
+            <nav class="page-footer__nav" aria-label="Юридична інформація">
               <ul class="page-footer__nav-list list-nostyled">
                 <li class="page-footer__nav-item">
                   <a href="#" class="page-footer__nav-link"> Політика конфіденційності </a>
@@ -554,8 +559,13 @@
             </nav>
           </div>
 
-          <a href="#" class="btn btn--icon to-top" id="toTop" title="Нагору">
-            <svg width="20" height="20">
+          <a
+            href="#"
+            class="btn btn--icon to-top"
+            id="toTop"
+            aria-label="Повернутися нагору"
+            title="Нагору">
+            <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="img/sprite-svg.svg#bottom-arrow-b"></use>
             </svg>
           </a>
