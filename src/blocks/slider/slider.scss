@@ -38,6 +38,9 @@ $slider-controls-space: $slider-arrow-size + $slider-controls-gap;
   // или глобальные стили на section (min-height, flex: 1, grid 1fr)
   flex: none;
   align-self: start;
+  width: 100%;
+  max-width: $screen-xxl;
+  margin-inline: auto;
   height: auto;
   min-width: 0;
   min-height: 0;

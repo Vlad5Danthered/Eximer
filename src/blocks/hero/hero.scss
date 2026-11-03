@@ -20,6 +20,10 @@ $bp-mobile: $screen-md - 1;
   font-family: $font-family;
   color: $text-color;
 
+  width: 100%;
+  max-width: $screen-xxl;
+  margin-inline: auto;
+
   // Заголовок и описание (десктоп)
   h1 span {
     display: block;
@@ -75,6 +79,7 @@ $bp-mobile: $screen-md - 1;
     @media (max-width: $screen-smm + 40) {
       .btn {
         width: 100%;
+        justify-content: center;
       }
     }
   }

@@ -18,7 +18,16 @@
 .blogs {
   $block-name: &; // #{$block-name}__element
 
+  padding-top: 32px;
   padding-bottom: 32px;
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 96px;
+  }
+  
+  @media (min-width: $screen-lg) {
+    padding-bottom: 64px;
+  }
   
   &__header > p, & > p {
     font-size: $font-size;
@@ -29,19 +38,6 @@
     h1:last-child {
       margin: 0;
     }
-  }
-
-  @media (min-width: $screen-xl) {
-    padding-bottom: 96px;
-  }
-  
-  @media (min-width: $screen-lg) {
-    padding-top: 24px;
-    padding-bottom: 64px;
-  }
-
-  @media (min-width: $screen-md) {
-    padding-top: 16px;
   }
 
   &, &__cards {

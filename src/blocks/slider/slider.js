@@ -28,6 +28,7 @@ document.querySelectorAll('[data-slider]').forEach((el) => {
     rewind: false, // с последнего слайда "вперёд" возвращает на первый, и наоборот
     speed: reduceMotion ? 0 : 600,
     grabCursor: true,
+    gap:116,
     // keyboard: { enabled: true }, // нужен модуль Keyboard
     a11y: {
       slideLabelMessage: '{{index}} з {{slidesLength}}',
